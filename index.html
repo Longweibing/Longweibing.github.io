@@ -3,6 +3,12 @@
 <head>
 	<title>Michael Long Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="asset/css/codehigh/zenburn.css"/>
+    <script src="asset/js/jquery-1.11.2.min.js"></script>
+    <!-- 代码高亮显示 -->
+    <script src="asset/js/codehigh/highlight.pack.js"></script>
+    <script >hljs.initHighlightingOnLoad();</script>
+
     <style type="text/css">
         @font-face {
           font-family: 'MyNewFont';   /*字体名称*/
@@ -45,6 +51,10 @@
         <span><a href="#">Home</a></span>
         <span><a href="#">Blog</a></span>
         <span><a href="about/aboutme.html">About</a></span>
+        <div class="background_music">
+            <audio id="music2" src="asset/music/菊次郎的夏天久石让.mp3"  loop="loop">你的浏览器不支持audio标签。</audio>
+            <a href="javascript:playPause();"><img src="asset/img/pause.gif" width="48" height="50" id="music_btn2" border="0"></a>
+        </div>
     </div>
 </div>
 
@@ -55,9 +65,62 @@
     <p style="font-size: 32px; text-align: center;">Welcome on here!</p>
 </div>
 
-<div>
-    <p style="text-align: center; font-size: 20px; color: #4A5534">My name is Michael Long, from China. Very happy for your coming, whether where you are, i love to communicate with you!</p>
+<div style="margin-left: 20%; margin-right: 20%;">
+    <pre>
+    <code class="python">
+    print("My name is Michael Long, from China.")
+    print("Very happy for your coming,")
+    print("whether where you are, i love to communicate with you!")
+    </code>
+    </pre>
 </div>
+   
+<div style="margin-left: 20%; margin-right: 20%;">
+    <pre>
+    <code class="java">
+    System.out.println("Python and java are my familiar language.");
+    System.out.println("My research about AI and NLP etc. also thanks to them.");
+    System.out.println("Thanks to the inventors of language with humility!");
+    </code>
+    </pre>
+</div>
+
+<div style="margin-left: 20%; margin-right: 20%; color: #0360D5">
+    <table border="1px">
+        <tr><td><b>The research directions involved</b></td><td><b>Description</b></td></tr>
+        <tr><td>Artificial intelligence（AI）</td><td>By the deep learning method to do reserach</td></tr>
+        <tr><td>Natural language processing（NLP）</td><td>Text data will be analyzed and processed by the machine learning method etc.</td></tr>
+        <tr><td>Machine learning（ML）</td><td>By learning from data, unearth knowledge</td></tr>
+        <tr><td>Multi-label learning（MLL）</td><td>Category learning, which predicts multiple categories at a time</td></tr>
+    </table>
+</div>
+
+
+<script>
+$("#audio_btn").click(function(){
+    var music = document.getElementById("music");
+    if(music.paused){
+        music.play();
+        $("#music_btn").attr("src","asset/img/play.gif");
+    }else{
+        music.pause();
+        $("#music_btn").attr("src","asset/img/pause.gif");
+    }
+});
+
+function playPause() {
+    var music = document.getElementById('music2');
+    var music_btn = document.getElementById('music_btn2');
+    if (music.paused){
+        music.play();
+        music_btn.src = 'asset/img/play.gif';
+    }
+    else{
+        music.pause();
+        music_btn.src = 'asset/img/pause.gif'; 
+    }
+}
+</script>
 
 </body>
 

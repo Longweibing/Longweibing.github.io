@@ -32,6 +32,7 @@ lightmode: true
 # A2HS  Add to Homescreen  添加到主屏幕 so cool
 A2HS: true
 theme_color: true
+theme: olive
 
 
 widgets:

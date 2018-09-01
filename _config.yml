@@ -1,114 +1,120 @@
-# ========== Profile ========== #
-# avatar
-avatar: /avatar/Misaka.jpg
-# author name
-author: fi3ework
-# signature
-signature: witness me
-# SNS
-social:
-  email: 12345@qq.com
-  github: //github.com/fi3ework
-  # wechat and qq should be a path of qr-code image
-  wechat: /assets/example_qr.png
-  qq: 
-  weibo: 
-  zhihu: 
-  douban: 
-  facebook: 
-  twitter: 
-  instagram: 
-  stack-overflow: 
-  v2ex: 
-  bilibili: 
-  linkedin: 
-  others: 
-  rss: 
-# friends
-friends:
-  friendA: //www.baidu.com
-  friendB: //www.google.com
-  friendC: 
-about:
-  enable: true
-  image: '/intro/about-bg.jpg'
+# ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
 
-# ========== Site ========== #
-# title of the site
-SEO_title: fi3ework's Studio
-# main title
-main_title: fi3ework's Studio.
-# subtitle
-subtitle: it's better to burn out than to fade away
-# site haeder image
-site_header_image: '/intro/index-bg.jpg'
-# post haeder image
-post_header_image: '/intro/post-bg.jpg'
-# 404 image
-_404_image: '/intro/404-bg.jpg'
+# Header Menu
+menu:
+  Home: /
+  Archives: archives
+  Categories: categories
+  Tags: tags
+  About: about
+rss: /atom.xml
 
-# ========== Search ========== #
-algolia_search:
+
+# Set default keywords (Use a comma to separate)
+keywords: ""
+
+# Put your favicon.ico into `hexo-site/themes/hipaper/source/` directory.
+favicon: css/images/favicon.ico
+
+
+# Put your avatar.jpg into `hexo-site/themes/hipaper/source/` directory.
+# url is target link (E.g. `url: https://hexo.io/logo.svg` or `url: css/images/mylogo.jpg`)
+avatar: 
   enable: false
-  hits:
-    per_page: 10
-  labels:
-    input_placeholder: Search for Posts
-    hits_empty: "We did not find any results for the search: ${query}"
-    hits_stats: "${hits} results found in ${time} ms"
+  width: 124
+  height: 124
+  bottom: 10
+  url: https://hexo.io/logo.svg
 
-# ========== Comment ========== #
-# Fill in the field to enable the corresponding comment plugin
-# If you want to add other comment plugin, edit in "custom.ejs"
-comment:
-  # Livere  site: https://livere.com/
-  livere_uid: 
-  # Disqus  site: https://disqus.com/
-  disqus_shortname: 
-  # Changyan  site: http://changyan.kuaizhan.com/
-  changyan_appid: 
-  changyan_conf: 
-  # Gitment  site: https://github.com/imsun/gitment
-  gitment_owner: 
-  gitment_repo: 
-  gitment_client_id: 
-  gitment_client_secret: 
-  # Youyan  site: http://www.uyan.cc/
-  youyan_uid: 
-  # Valine  site: https://valine.js.org/
-  valine_appId: 
-  valine_appKey: 
-  valine_placeHolder: 
 
-# ========== Analytics ========== #
-# enable Busuanzi analytics
-busuanzi: true
-# fill in pv or uv
-busuanzi_pv_or_uv: 'pv'
-# custom analytic slogan, '${count}' is the analytic number, DO NOT modify it.
-busuanzi_slug: 'PV: ${count} :)'
-# Baidu analytics
-baidu_analytics: 
-# Google analytics
-google_analytics: 
-# CNZZ analytics
-CNZZ_analytics: 
+# AboutPage background, support multiple images.
+about_big_image: [css/images/pose01.jpg, https://source.unsplash.com/collection/954550/1920x1080, https://source.unsplash.com/collection/954550/1920x1081]
 
-# ========== Others ========== #
-# favicon
-favicon: /assets/favicon.ico
-# truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
-truncate_length: 
-# enable toc
-toc: true
-# word count & reading time
-reading_info: true
-# intro height (the default is 50 percents of the screen, you can input other number)
-index_intro_height: 50
-post_intro_height: 50
-about_intro_height: 50
-# copyright
-copyright:
-  enable: true
-  # https://creativecommons.org/
-  license: '本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可'
+
+# Homepage thumbnail
+random_thumb: false
+
+
+# Content
+fancybox: true
+
+
+# Sidebar
+sidebar: right
+widgets:
+- search
+- social
+- recent_posts
+- category
+- tag
+- tagcloud
+- archive
+
+# Social Links
+# Key is the name of FontAwsome icon.
+# Value is the target link (E.g. GitHub: https://github.com/iTimeTraveler)
+social:
+  Github: https://github.com/iTimeTraveler
+  Weibo: 
+  Twitter: 
+  Facebook: 
+  Google-plus: 
+  Instagram: 
+
+
+# Search
+search:
+    insight: true # you need to install `hexo-generator-json-content` before using Insight Search
+    swiftype: # enter swiftype install key here
+    baidu: false # you need to disable other search engines to use Baidu search, options: true, false
+
+
+# comment ShortName, you can choose only ONE to display.
+duoshuo_shortname: 
+disqus_shortname: 
+livere_shortname: MTAyMC8yOTQ4MS82MDQ5
+uyan_uid: 
+wumii: 
+
+
+# Code Highlight theme
+# Available value:
+#    default | normal | night | night eighties | night blue | night bright
+# https://github.com/chriskempson/tomorrow-theme
+highlight_theme: default
+
+
+# widget behavior
+archive_type: 'monthly'
+show_count: true
+
+# Google Webmaster tools verification setting
+# See: https://www.google.com/webmasters/
+google_site_verification:
+baidu_site_verification:
+qihu_site_verification:
+
+# Miscellaneous
+google_analytics:
+gauges_analytics:
+baidu_analytics:
+tencent_analytics:
+busuanzi_analytics: true
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+# Facebook SDK Support.
+# https://github.com/iissnan/hexo-theme-next/pull/410
+facebook_sdk:
+  enable: false
+  app_id:       #<app_id>
+  fb_admin:     #<user_id>
+  like_button:  #true
+  webmaster:    #true
+
+# CNZZ count
+cnzz_siteid: 1260716016

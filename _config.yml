@@ -1,120 +1,60 @@
-# ---------------------------------------------------------------
-# Site Information Settings
-# ---------------------------------------------------------------
-
-# Header Menu
-menu:
+# ==== Nav link====
+nav:
   Home: /
-  Archives: archives
-  Categories: categories
-  Tags: tags
-  About: about
-rss: /atom.xml
+  Archives: /archives
+  Tags: /tags #extra work needed for this to work
+  Catogories: /categories #extra work needed for this to work
+# ==== site logo ====
+favicon: '/compass/imgs/favicon.ico' #the default favicon, feel free to change
 
 
-# Set default keywords (Use a comma to separate)
-keywords: ""
+# ==== Table of Content ====
+toc:
+  list_number_on: false  #if this is set to 'true', headings of your posts should not have numerical ordered added manually. 
 
-# Put your favicon.ico into `hexo-site/themes/hipaper/source/` directory.
-favicon: css/images/favicon.ico
+# ==== Copyright ====
+copyright_on: true
+copyright:
+  liscense_type: CC BY-NC-SA 4.0
+  liscense_link: http://creativecommons.org/licenses/by-nc-sa/4.0/
 
+# ==== Footer Setting ====
+inception: 2017
+hexo_link: http://hexo.io
+email_address:
+social_media:
+  github:
+    name: github
+    address: https://github.com/yourUserName # replace this link with yours
+    icon: fa-github
+  weibo:
+    name: weibo
+    address: # add your link here, like the way you do with github's address or just ignore it
+    icon: fa-weibo
+  facebook:
+    name: facebook
+    address: # add your link here, like the way you do with github's address or just ignore it
+    icon: fa-facebook
+  twitter:
+    name: twitter
+    address: # add your link here, like the way you do with github's address or just ignore it
+    icon: fa-twitter
 
-# Put your avatar.jpg into `hexo-site/themes/hipaper/source/` directory.
-# url is target link (E.g. `url: https://hexo.io/logo.svg` or `url: css/images/mylogo.jpg`)
-avatar: 
-  enable: false
-  width: 124
-  height: 124
-  bottom: 10
-  url: https://hexo.io/logo.svg
-
-
-# AboutPage background, support multiple images.
-# about_big_image: [css/images/pose01.jpg, https://source.unsplash.com/collection/954550/1920x1080, https://source.unsplash.com/collection/954550/1920x1081]
-
-
-# Homepage thumbnail
-random_thumb: false
-
-
-# Content
-fancybox: true
-
-
-# Sidebar
-sidebar: right
-widgets:
-- search
-- social
-- recent_posts
-- category
-- tag
-- tagcloud
-- archive
-
-# Social Links
-# Key is the name of FontAwsome icon.
-# Value is the target link (E.g. GitHub: https://github.com/iTimeTraveler)
-social:
-  Github: https://github.com/longweibing
-  Weibo: 
-  Twitter: 
-  Facebook: 
-  Google-plus: 
-  Instagram: 
+# ==== Additional Setting ====
+# View Count by busuanzi
+busuanzi_on: true # set to false to disable the view count for your site and posts
 
 
-# Search
-search:
-    insight: true # you need to install `hexo-generator-json-content` before using Insight Search
-    swiftype: # enter swiftype install key here
-    baidu: false # you need to disable other search engines to use Baidu search, options: true, false
 
-
-# comment ShortName, you can choose only ONE to display.
-duoshuo_shortname: 
-disqus_shortname: 
-livere_shortname: MTAyMC8yOTQ4MS82MDQ5
-uyan_uid: 
-wumii: 
-
-
-# Code Highlight theme
-# Available value:
-#    default | normal | night | night eighties | night blue | night bright
-# https://github.com/chriskempson/tomorrow-theme
-highlight_theme: default
-
-
-# widget behavior
-archive_type: 'monthly'
-show_count: true
-
-# Google Webmaster tools verification setting
-# See: https://www.google.com/webmasters/
-google_site_verification:
-baidu_site_verification:
-qihu_site_verification:
-
-# Miscellaneous
-google_analytics:
-gauges_analytics:
-baidu_analytics:
-tencent_analytics:
-busuanzi_analytics: true
-twitter:
-google_plus:
-fb_admins:
-fb_app_id:
-
-# Facebook SDK Support.
-# https://github.com/iissnan/hexo-theme-next/pull/410
-facebook_sdk:
-  enable: false
-  app_id:       #<app_id>
-  fb_admin:     #<user_id>
-  like_button:  #true
-  webmaster:    #true
-
-# CNZZ count
-cnzz_siteid: 1260716016
+# Algolia Search
+algolia_on: false # set to true to enable seach within your site, note that extra work needed
+algolia:
+  applicationID:
+  apiKey:
+  indexName:
+  chunkSize: 5000
+  field:
+    - title
+    - path
+    - excerpt:strip
+    - excerpt

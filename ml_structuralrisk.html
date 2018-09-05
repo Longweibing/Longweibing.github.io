@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>数据结构-图 | Wee bing</title>
+		<title>统计机器学习中的风险定义 | Wee bing</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -104,29 +104,24 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">数据结构-图</a></h2>
-										<p>图是一种被经常使用到的数据结构，基于图的相关算法也具有广泛的应用。本文主要从图的定义、图的相关概念以及图的逻辑表示为重点介绍图。</p>
+										<h2><a href="#">统计机器学习中的风险定义</a></h2>
+										<p>经验风险、置信风险、结构风险、期望风险的定义以及他们与机器学习的关系</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2015-11-01">September 2, 2018</time>
+										<time class="published" datetime="2015-11-01">September 5, 2018</time>
 										<a href="#" class="author"><span class="name">Weibing Long</span><img src="images/me.jpg" alt="" /></a>
 									</div>
 								</header>
-								<span class="image featured"><img src="images/net01.jpg" alt="" /></span>
-								<h3>图的基本概念</h3>
-								<p>图是由点和边组成的一种数据结构，数据结构分为逻辑结构和存储结构（或称为物理结构），而图属于逻辑结构。图按照有无方向分为<font color="red">有向图</font>和<font color="red">无向图</font>。顾名思义：有向图为带有方向的图，无向图为不带方向的图。图1所示为两种类型图的基本结构。
-								
-</p>
-<span class="image featured"><img src="images/graph01.jpg" alt="" /></span>
-<p>由图可知：图的基本结构由点和边组成。如果将社交关系表示为一种图，则点代表了人，而边代表了人与人之间的关系，从这里也能看出图的广泛性和普遍性。</p>
-<h3>图的基本概念</h3>
-<p>图中边带有的值称为<font color="red">权值</font>。与某个顶点相邻的顶点个数称为该顶点的<font color="red">度</font>（有向图中，顶点为起始点称为<font color="red">出度</font>，否则为<font color="red">入度</font>）。一个顶点a到另一个顶点b的所有有序点集与边集称为a到b<font color="red">路径</font>。如果该路径不经历重复点或边，称为<font color="red">简单路径</font>。图中所有路径都为简单路径，则称为<font color="red">简单图</font>。起始点和终止点相同，则称为<font color="red">有环图</font>。两个顶点存在路径，则称他们是<font color="red">连通的</font>。任意两个顶点都连通则称为<font color="red">连通图</font>（有向图中称为<font color="red">强连通图</font>）。</p>
-<h3>图的存储结构</h3>
-<p>图的存储结构包括：<font color="red">邻接矩阵</font>、<font color="red">邻接表</font>、<font color="red">十字链表</font>、<font color="red">邻接多重表等</font>，其中邻接矩阵和邻接表有向图和无向图都适用，十字链表适用有向图，邻接多重表适用无向图。</p>
-<h3>邻接矩阵</h3>
-<p>邻接矩阵是一个二维矩阵，其中索引值代表顶点编号，值代表边的连接情况（值为0表示无连接，值为1表示顶点间有边）。无向图因为不具有方向，因此G[i][j] = G[j][i](所以关于右对角线对称)。</p>
+								<span class="image featured"><img src="images/cliff01.jpg" alt="" /></span>
+								<h3>经验风险</h3>
+								<p>经验风险是一批次或全部训练数据的误差累积和，与机器学习中的误差和（损失和）相对应。损失函数算出的一个数据的值为经验风险的一项。</p>
+								<h3>置信风险</h3>
+								<p>经验风险可能不能很准确的描述一个问题，因此需要加入一个正则项（或者为惩罚项），这个正则项就是置信风险。</p>
+								<h3>期望风险</h3>
+								<p>期望风险为经验风险与置信风险的和。</p>
+								<h3>结构风险</h3>
+								<p>结构风险为期望风险的上限。</p>
 
-<p>待续。。。</p>
 								<footer>
 									<ul class="stats">
 										<li><a href="#">General</a></li>

@@ -28,8 +28,9 @@
 							<ul>
 								<li><a href="#">生活</a></li>
 								<li><a href="#">博客</a></li>
-								<li><a href="#">分类</a></li>
+								<li><a href="class/index.html">分类</a></li>
 								<li><a href="#">标签</a></li>
+								<li><a href="https://docs.oracle.com/javase/9/docs/api/index.html?overview-summary.html">JDK9API</a></li>
 								<li><a href="#">About me</a></li>
 							</ul>
 						</nav>
@@ -116,18 +117,22 @@
 								<h3>Tensorflow基本概念</h3>
 								<p>张量和操作为计算图的基本组成元素，张量相当于边，操作相当于点。
 								<ul>
-									<li>张量</li>
-									<li>操作</li>
+									<li>张量<br>
+										张量是对向量或者高维矩阵的泛化，用来表示图运算过程中的数据。<b><a href="https://www.tensorflow.org/api_docs/python/tf/Tensor">tf.Tensor</a></b>是它的API。
+									</li>
+									<li>操作<br>
+										数据与数据之间进行的计算被称为操作。小到常量、变量的初始化，大到矩阵之间的加减乘除都可以称为操作。
+									</li>
 									<li>常量<br>
-										用tf.constant()进行定义。常量为不需要变化的张量，输入数据为numpy的array等数据类型，请填写时注意一下。
+										用<b><a href="https://www.tensorflow.org/api_docs/python/tf/constant">tf.constant()</a></b>进行定义。常量为不需要变化的张量，输入数据为numpy的array等数据类型，请填写时注意一下。
 									</li>
 									
 									<li>变量<br>
-										用tf.Variable()进行定义。变量主要用于需要被初始化的参数，如深度学习中的权重、偏置值，需要在训练开始前先进行初始化。
+										用<b><a href="https://www.tensorflow.org/api_docs/python/tf/Variable">tf.Variable()</a></b>进行定义。变量主要用于需要被初始化的参数，如深度学习中的权重、偏置值，需要在训练开始前先进行初始化。
 									</li>
 									
 									<li>占位符<br>
-										用tf.placeholder()进行定义。占位符主要用于训练时需要动态获取的数据，如深度学习中的输入数据。每次训练迭代周期内，用feed_dict={}体现。（feed_dict作为sess.run()的一个参数）（请区分好变量和占位符的创建场景）<br><br>
+										用<b><a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">tf.placeholder()</a></b>进行定义。占位符主要用于训练时需要动态获取的数据，如深度学习中的输入数据。每次训练迭代周期内，用feed_dict={}体现。（feed_dict作为sess.run()的一个参数）（请区分好变量和占位符的创建场景）<br><br>
 									以上概念所对应的方法最终返回的结果为张量。
 									</li>
 									
@@ -144,7 +149,7 @@
 	<li>运行图<br>
 		运行图：sess.run(张量或者操作)
 	</li>
-		
+	例如下面的实例代码：	
 </ol>
 </p>
 <pre><code class="python">
@@ -173,6 +178,7 @@ with tf.Session() as sess:
     print(sess.run(y))
 
 								</code></pre>
+先导入必要的模块，然后定义数据和图的骨架，最后在tf.Session中运行结果。
 								<footer>
 									<ul class="stats">
 										<li><a href="#">General</a></li>

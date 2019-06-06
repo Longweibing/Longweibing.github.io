@@ -1,329 +1,150 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Wee bing</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			#searchContent {
-				visibility: hidden;
-				position: fixed;  /* 不随浏览器的滚动而滚动，相对浏览器固定 */
-				z-index: 100;
-				/*visibility: hidden;*/
-				width: 50%;
-				height: 50%;
-				left:50%;
-				top:50%;
-				margin: -10% 25% 40% -25%;
-				background-color: #FFFFFF;
-				border: #cccccc solid 1px;
-				word-wrap:break-word;  /* 文字换行 */
-				overflow:auto;  /* 内容溢出，显示滚动条 */
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="asset/images/favicon.jpg">
 
-				padding: 20px;
-			}
-		</style>
+    <title>博客 |  爱做梦真是太好了</title>
 
-		<script>
+    <!-- Bootstrap core CSS -->
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
 
-			function searchText(queryObject) {
-				document.getElementById("searchContent").style.visibility = "visible";
-				document.getElementById("searchContent").innerHTML = queryObject.value;
+    <!-- Custom styles for this template -->
+    <link href="asset/css/navbar-top-fixed.css" rel="stylesheet">
+</head>
 
-			}
-		</script>
-	</head>
-	<body class="is-preload">
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <img src="asset/images/favicon.jpg">
+        <a class="navbar-brand" href="#">&nbsp爱做梦真是太好了</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">主页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分类</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="#">机器学习</a>
+                        <a class="dropdown-item" href="#">深度学习</a>
+                        <a class="dropdown-item" href="#">JavaEE</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="#">人工智能</a>
+                        <a class="dropdown-item" href="#">LSTM</a>
+                        <a class="dropdown-item" href="#">CNN</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+    </nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card text-white bg-dark" >
+                <div class="card-header"><a href="blogs/TENSORFLOW学习笔记-1.html" class="text-white">TENSORFLOW学习笔记-1</a></div>
+                <div class="card-body">
+                    <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
+                    <a href="#" class="btn btn-primary float-md-right">阅读全文</a>
+                </div>
+            </div>
+            <hr>
 
-		<div id="searchContent"></div>
-		<!-- Wrapper -->
-			<div id="wrapper">
+            <div class="card text-white bg-success" >
+                <div class="card-header"><a href="blogs/TENSORFLOW学习笔记-1.html" class="text-white">TENSORFLOW学习笔记-1</a></div>
+                <div class="card-body">
+                    <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
+                    <a href="#" class="btn btn-primary float-md-right">阅读全文</a>
+                </div>
+            </div>
+            <hr>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">我的主页</a></h1>
-						<nav class="links">
-							<ul>
-								<li><a href="class/index.html">分类</a></li>
-								<li><a href="#">标签</a></li>
-								<li><a href="https://docs.oracle.com/javase/9/docs/api/index.html?overview-summary.html">JDK9API</a></li>
-								<li><a href="#">关于我</a></li>
-							</ul>
-						</nav>
-						<nav class="main">
-							<ul>
-								<li class="search">
-									<a class="fa-search" href="#search">搜索</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="搜索" oninput="searchText(this)" />
-									</form>
-								</li>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">菜单</a>
-								</li>
-							</ul>
-						</nav>
-					</header>
+            <div class="card text-white bg-danger" >
+                <div class="card-header"><a href="blogs/TENSORFLOW学习笔记-1.html" class="text-white">TENSORFLOW学习笔记-1</a></div>
+                <div class="card-body">
+                    <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
+                    <a href="#" class="btn btn-primary float-md-right">阅读全文</a>
+                </div>
+            </div>
 
-				<!-- Menu -->
-					<section id="menu">
+            <hr>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
 
-						<!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="搜索" oninput="searchText(this)" />
-								</form>
-							</section>
+        </div>
 
-						<!-- Links -->
-							<section>
-								<ul class="links">
-									<li>
-										<a href="class/index.html">
-											<h3>分类</h3>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>标签</h3>
-										</a>
-									</li>
-									<li>
-										<a href="https://docs.oracle.com/javase/9/docs/api/index.html?overview-summary.html">
-											<h3>JDK9API</h3>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>关于我</h3>
-										</a>
-									</li>
-								</ul>
-							</section>
+        <div class="col-sm-4">
+            <!-- 博主简介 -->
+            <div class="card text-white bg-dark">
+                <div class="card-header">博主简介</div>
+                <div class="card-body">
+                    <h5 class="card-title">爱做梦真是太好了</h5>
+                    <p class="card-text">技术爱好者，目前职位是算法工程师。<br><br>2019.06.04写</p>
+                </div>
+            </div>
+            <hr>
+            <div class="card text-white bg-dark">
+                <div class="card-header">博客分类</div>
+                <div class="card-body">
+                    <p class="card-text"><a href="#" class="text-white">机器学习</a></p>
+                    <p class="card-text"><a href="#" class="text-white">深度学习</a></p>
+                    <p class="card-text"><a href="#" class="text-white">数据结构与算法</a></p>
+                    <p class="card-text"><a href="#" class="text-white">J2EE</a></p>
+                </div>
+            </div>
 
-					</section>
+            <hr>
 
-				<!-- Main -->
-					<div id="main">
+            <div class="card text-white bg-dark">
+                <div class="card-header">热门标签</div>
 
-						<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="single.html">Tersorflow学习笔记-1</a></h2>
-										<p>Tensorflow是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的的工具。它主要由python语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用tensorflow不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些tensorflow的学习笔记，供我或者大家参考，具体细节还是看tensorflow官方文档更好。</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">September 1, 2018</time>
-										<a href="#" class="author"><span class="name">Weibing Long</span><img src="images/me.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="single.html" class="image featured"><img src="images/tensorflow.jpg" alt="" /></a>
-								<p>TENSORFLOW is a tool to build neural network, deep learning and other models by calculating graphs, and to realize related tasks. It is mainly implemented in PYTHON language, and internal computing is implemented in C++, so it is characterized as simple, efficient and stable. By using TENSORFLOW, we can not only achieve our common deep learning tasks, but also free us from the complex implementation details and pay more attention to our tasks, thus saving valuable time. This paper is mainly some study notes of TENSORFLOW for my or your reference. It is better to read the official documents of TENSORFLOW for details.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="single.html" class="button large">继续阅读</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
 
-						<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="graph.html">数据结构-图</a></h2>
-										<p>图是一种被经常使用到的数据结构，基于图的相关算法也具有广泛的应用。本文主要从图的定义、图的相关概念以及图的逻辑表示为重点介绍图。</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">September 2, 2018</time>
-										<a href="#" class="author"><span class="name">Weibing Long</span><img src="images/me.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="graph.html" class="image featured"><img src="images/net01.jpg" alt="" /></a>
-								<p>Graph is a kind of data structure that is often used, and relevant algorithms based on graph have been widely used.This paper focuses on the definition of graphs, related concepts of graphs and logical representation of graphs.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="graph.html" class="button large">继续阅读</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
-						<!-- Pagination -->
-							<ul class="actions pagination">
-								<li><a href="" class="disabled button large previous">Previous Page</a></li>
-								<li><a href="#" class="button large next">Next Page</a></li>
-							</ul>
+                <div class="card-body">
+                    <button type="button" class="btn btn-primary btn-sm">Spring boot</button>
+                    <button type="button" class="btn btn-secondary btn-sm">排序</button>
+                    <button type="button" class="btn btn-success btn-sm">Python</button>
+                    <button type="button" class="btn btn-danger btn-sm">Java</button><hr>
+                    <button type="button" class="btn btn-warning btn-sm">人工智能</button>
+                    <button type="button" class="btn btn-info btn-sm">Spring</button>
+                    <button type="button" class="btn btn-light btn-sm">Leetcode</button>
+                    <button type="button" class="btn btn-primary btn-sm">多标签分类</button><hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-					</div>
 
-				<!-- Sidebar -->
-					<section id="sidebar">
-
-						<!-- Intro -->
-							<section id="intro">
-								<header>
-									<h2>A dream, a life</h2>
-									<p>Thanks for what i do</p>
-								</header>
-							</section>
-
-						<!-- Mini Posts -->
-							<section>
-								<div class="mini-posts">
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="ml_structuralrisk.html">统计机器学习中的风险定义</a></h3>
-												<time class="published" datetime="2018-09-05">September 5, 2018</time>
-												<a href="#" class="author"><img src="images/me.jpg" alt="" /></a>
-											</header>
-											<a href="ml_structuralrisk.html" class="image"><img src="images/cliff01.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="single.html">Rutrum neque accumsan</a></h3>
-												<time class="published" datetime="2015-10-19">October 19, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="single.html">Odio congue mattis</a></h3>
-												<time class="published" datetime="2015-10-18">October 18, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="single.html">Enim nisl veroeros</a></h3>
-												<time class="published" datetime="2015-10-17">October 17, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic07.jpg" alt="" /></a>
-										</article>
-
-								</div>
-							</section>
-
-						<!-- Posts List -->
-							<section>
-								<ul class="posts">
-									<li>
-										<article>
-											<header>
-												<h3><a href="single.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic08.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="single.html">Convallis maximus nisl mattis nunc id lorem</a></h3>
-												<time class="published" datetime="2015-10-15">October 15, 2015</time>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic09.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="single.html">Euismod amet placerat vivamus porttitor</a></h3>
-												<time class="published" datetime="2015-10-10">October 10, 2015</time>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic10.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="single.html">Magna enim accumsan tortor cursus ultricies</a></h3>
-												<time class="published" datetime="2015-10-08">October 8, 2015</time>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic11.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="single.html">Congue ullam corper lorem ipsum dolor</a></h3>
-												<time class="published" datetime="2015-10-06">October 7, 2015</time>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic12.jpg" alt="" /></a>
-										</article>
-									</li>
-								</ul>
-							</section>
-							<!-- 来必力City版安装代码 -->
-						<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyNS84NTg5">
-						<script type="text/javascript">
-						   (function(d, s) {
-							   var j, e = d.getElementsByTagName(s)[0];
-
-							   if (typeof LivereTower === 'function') { return; }
-
-							   j = d.createElement(s);
-							   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-							   j.async = true;
-
-							   e.parentNode.insertBefore(j, e);
-						   })(document, 'script');
-						</script>
-						<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-						</div>
-						<!-- City版安装代码已完成 -->
-
-						<!-- About -->
-							<section class="blurb">
-								<h2>About</h2>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
-								</ul>
-							</section>
-
-						<!-- Footer -->
-							<section id="footer">
-								<ul class="icons">
-									<li><a href="https://github.com/Longweibing" class="fa-github"><span class="label">Github</span></a></li>
-									<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-									<li><a href="mailto:591178251@qq.com" class="fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-								<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-							</section>
-
-					</section>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="asset/js/jquery-slim.min.js" ></script>
+    <script src="asset/js/bootstrap.min.js"></script>
+</body>

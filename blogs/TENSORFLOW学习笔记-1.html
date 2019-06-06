@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="stylesheet" href="../asset/css/styles/darkula.css"/>
+	<script src="../asset/js/highlight.pack.js"></script>
+
+	<link rel="icon" href="../asset/images/favicon.jpg">
+
+	<title>Tensorflow学习笔记-1 | Wee bing</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="../asset/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="../asset/css/navbar-top-fixed.css" rel="stylesheet">
+
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
+</head>
+
+<body>
+<div class="container-fluid">
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<img src="../asset/images/favicon.jpg">
+		<a class="navbar-brand" href="#">&nbsp爱做梦真是太好了</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">主页<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分类</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown03">
+						<a class="dropdown-item" href="#">机器学习</a>
+						<a class="dropdown-item" href="#">深度学习</a>
+						<a class="dropdown-item" href="#">JavaEE</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown03">
+						<a class="dropdown-item" href="#">人工智能</a>
+						<a class="dropdown-item" href="#">LSTM</a>
+						<a class="dropdown-item" href="#">CNN</a>
+					</div>
+				</li>
+			</ul>
+			<form class="form-inline mt-2 mt-md-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+			</form>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<h2>Tensorflow学习笔记-1</h2>
+				<hr>
+				<p class="text-justify text-dark">Tensorflow是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的的工具。它主要由python语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用tensorflow不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些tensorflow的学习笔记，供我或者大家参考，具体细节还是看tensorflow官方文档更好。
+				</p>
+				<span class="image featured"><img src="../asset/images/tensorflow.jpg" alt="" /></span>
+				<hr>
+
+				<h3>Tensorflow基本概念</h3>
+				<p class="text-justify text-dark">张量和操作为计算图的基本组成元素，张量相当于边，操作相当于点。
+				<ul class="list-group-item-success">
+					<li>张量<br>
+						张量是对向量或者高维矩阵的泛化，用来表示图运算过程中的数据。<b><a href="https://www.tensorflow.org/api_docs/python/tf/Tensor">tf.Tensor</a></b>是它的API。
+					</li>
+					<li>操作<br>
+						数据与数据之间进行的计算被称为操作。小到常量、变量的初始化，大到矩阵之间的加减乘除都可以称为操作。
+					</li>
+					<li>常量<br>
+						用<b><a href="https://www.tensorflow.org/api_docs/python/tf/constant">tf.constant()</a></b>进行定义。常量为不需要变化的张量，输入数据为numpy的array等数据类型，请填写时注意一下。
+					</li>
+
+					<li>变量<br>
+						用<b><a href="https://www.tensorflow.org/api_docs/python/tf/Variable">tf.Variable()</a></b>进行定义。变量主要用于需要被初始化的参数，如深度学习中的权重、偏置值，需要在训练开始前先进行初始化。
+					</li>
+
+					<li>占位符<br>
+						用<b><a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">tf.placeholder()</a></b>进行定义。占位符主要用于训练时需要动态获取的数据，如深度学习中的输入数据。每次训练迭代周期内，用feed_dict={}体现。（feed_dict作为sess.run()的一个参数）（请区分好变量和占位符的创建场景）<br><br>
+						以上概念所对应的方法最终返回的结果为张量。
+					</li>
+
+					</ul>
+					<hr>
+
+					<h3>Tensorflow构建过程</h3>
+					<ol class="list-group-item-success">
+						<li>创建图<br>
+							创建张量<br>
+							创建操作
+						</li>
+
+						<li>运行图<br>
+							运行图：sess.run(张量或者操作)
+						</li>
+						例如下面的实例代码：
+					</ol>
+					</p>
+					<pre><code class="python">
+# 导入模块
+import tensorflow as tf
+import numpy as np
+
+# 下面为tensorflow范式(本文以神经网络为例)
+# 1. 加载数据，例如：
+x = numpy.array([[0.2, 0.7], [0.14, -0.6]])
+
+# 2. 构建计算图
+x = tf.constant(x)
+w1 = tf.Variable(tf.random_normal([2, 3], stddev=1, seed=1))  # 张量
+w2 = tf.Variable(tf.random_normal([3, 1], stddev=1, seed=1))  # 张量
+h = tf.matmul(x, w1)  # 操作
+y = tf.matmul(h, w2)  # 操作
+
+# 运行计算图
+with tf.Session() as sess:
+    # 初始化变量
+    init_op = tf.global_variables_initializer()
+    # 运行操作
+    sess.run(init_op)
+
+    print(sess.run(y))
+
+								</code></pre>
+					<p class="text-justify">先导入必要的模块，然后定义数据和图的骨架，最后在tf.Session中运行结果。</p>
+				<hr>
+				<div class="float-md-right small">文章更新于<span class="text-success">2019年6月6日</span></div>
+
+				<!-- 来必力City版安装代码 -->
+				<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyNS84NTg5">
+					<script type="text/javascript">
+						(function(d, s) {
+							var j, e = d.getElementsByTagName(s)[0];
+
+							if (typeof LivereTower === 'function') { return; }
+
+							j = d.createElement(s);
+							j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+							j.async = true;
+
+							e.parentNode.insertBefore(j, e);
+						})(document, 'script');
+					</script>
+					<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+				</div>
+				<!-- City版安装代码已完成 -->
+			</div>
+
+			<div class="col-sm-4">
+				<!-- 博主简介 -->
+				<div class="card text-white bg-dark">
+					<div class="card-header">博主简介</div>
+					<div class="card-body">
+						<h5 class="card-title">爱做梦真是太好了</h5>
+						<p class="card-text">技术爱好者，目前职位是算法工程师。<br><br>2019.06.04写</p>
+					</div>
+				</div>
+				<hr>
+				<div class="card text-white bg-dark">
+					<div class="card-header">博客分类</div>
+					<div class="card-body">
+						<p class="card-text"><a href="#" class="text-white">机器学习</a></p>
+						<p class="card-text"><a href="#" class="text-white">深度学习</a></p>
+						<p class="card-text"><a href="#" class="text-white">数据结构与算法</a></p>
+						<p class="card-text"><a href="#" class="text-white">J2EE</a></p>
+					</div>
+				</div>
+
+				<hr>
+
+				<div class="card text-white bg-dark">
+					<div class="card-header">热门标签</div>
+
+
+					<div class="card-body">
+						<button type="button" class="btn btn-primary btn-sm">Spring boot</button>
+						<button type="button" class="btn btn-secondary btn-sm">排序</button>
+						<button type="button" class="btn btn-success btn-sm">Python</button>
+						<button type="button" class="btn btn-danger btn-sm">Java</button><hr>
+						<button type="button" class="btn btn-warning btn-sm">人工智能</button>
+						<button type="button" class="btn btn-info btn-sm">Spring</button>
+						<button type="button" class="btn btn-light btn-sm">Leetcode</button>
+						<button type="button" class="btn btn-primary btn-sm">多标签分类</button><hr>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../asset/js/jquery-slim.min.js" ></script>
+<script src="../asset/js/bootstrap.min.js"></script>
+</body>

@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f7109eb-a2f9-4977-a5da-1c690c3f4c55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/images/浏览量.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/images/点赞.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/images/评论数-10.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blogs/TENSORFLOW学习笔记-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/TENSORFLOW学习笔记-1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
@@ -21,29 +17,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1634">
-              <caret line="110" column="77" selection-start-line="110" selection-start-column="77" selection-end-line="110" selection-end-column="77" />
+            <state relative-caret-position="342">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
-                <element signature="e#2891#2897#0" expanded="true" />
-                <element signature="e#2891#2897#1" expanded="true" />
-                <element signature="e#2939#2945#0" expanded="true" />
-                <element signature="e#2932#2938#1" expanded="true" />
-                <element signature="e#2983#2989#0" expanded="true" />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#6986#6992#0" expanded="true" />
+                <element signature="e#7148#7154#0" expanded="true" />
+                <element signature="e#7283#7289#0" expanded="true" />
+                <element signature="e#7415#7421#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blogs/TENSORFLOW学习笔记-1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="186" column="81" selection-start-line="186" selection-start-column="81" selection-end-line="186" selection-end-column="81" />
+            <state relative-caret-position="152">
+              <caret line="143" column="63" selection-start-line="143" selection-start-column="63" selection-end-line="143" selection-end-column="63" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2609#2615#0" expanded="true" />
+                <element signature="e#8655#8661#0" expanded="true" />
+                <element signature="e#8800#8806#0" expanded="true" />
+                <element signature="e#8939#8945#0" expanded="true" />
+                <element signature="e#9075#9081#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,14 +52,22 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>，目前职位是算法工程师</find>
+      <find>阅读</find>
+      <find>点赞</find>
+      <find>dark</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/blogs/TENSORFLOW学习笔记-1.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -87,12 +96,6 @@
               <item name="Longweibing.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="Longweibing.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="asset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Longweibing.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Longweibing.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="asset" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -147,11 +150,13 @@
       <workItem from="1559650137381" duration="7079000" />
       <workItem from="1559809422892" duration="5133000" />
       <workItem from="1559822284204" duration="2998000" />
+      <workItem from="1560061280107" duration="9285000" />
+      <workItem from="1560084443258" duration="5424000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20244000" />
+    <option name="totallyTimeSpent" value="34953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -192,26 +197,31 @@
     <entry file="file://$PROJECT_DIR$/asset/css/styles/vs.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/blogs/TENSORFLOW学习笔记-1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1634">
-          <caret line="110" column="77" selection-start-line="110" selection-start-column="77" selection-end-line="110" selection-end-column="77" />
+        <state relative-caret-position="152">
+          <caret line="143" column="63" selection-start-line="143" selection-start-column="63" selection-end-line="143" selection-end-column="63" />
           <folding>
-            <element signature="e#2891#2897#0" expanded="true" />
-            <element signature="e#2891#2897#1" expanded="true" />
-            <element signature="e#2939#2945#0" expanded="true" />
-            <element signature="e#2932#2938#1" expanded="true" />
-            <element signature="e#2983#2989#0" expanded="true" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2609#2615#0" expanded="true" />
+            <element signature="e#8655#8661#0" expanded="true" />
+            <element signature="e#8800#8806#0" expanded="true" />
+            <element signature="e#8939#8945#0" expanded="true" />
+            <element signature="e#9075#9081#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/TENSORFLOW学习笔记-1.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="186" column="81" selection-start-line="186" selection-start-column="81" selection-end-line="186" selection-end-column="81" />
+        <state relative-caret-position="342">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#6986#6992#0" expanded="true" />
+            <element signature="e#7148#7154#0" expanded="true" />
+            <element signature="e#7283#7289#0" expanded="true" />
+            <element signature="e#7415#7421#0" expanded="true" />
           </folding>
         </state>
       </provider>

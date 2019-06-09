@@ -14,13 +14,50 @@
 
     <!-- Custom styles for this template -->
     <link href="asset/css/navbar-top-fixed.css" rel="stylesheet">
+
+    <style>
+        #showView {
+            position: absolute;
+            height: 60%;
+            width: 60%;
+            top: 20%;
+            left: 20%;
+            text-justify: auto;
+            overflow: auto;
+            z-index: 100;
+            visibility: hidden;
+            background-color: #FFFFFF;
+        }
+
+    </style>
 </head>
 
-<body>
+<body style="background-color: #407ee7">
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <img src="asset/images/favicon.jpg">
-        <a class="navbar-brand" href="#">&nbsp爱做梦真是太好了</a>
+
+    <!-- 搜索界面 -->
+    <div id="showView">
+        <div>
+            <div class="card text-dark bg-white">
+                <div class="card-header"><a href="blogs/TENSORFLOW学习笔记-1.html" class="text-dark">TENSORFLOW学习笔记-1</a></div>
+                <div class="card-body">
+                    <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
+                    <a href="blogs/TENSORFLOW学习笔记-1.html" class="btn btn-primary float-md-right">阅读全文</a>
+                </div>
+            </div>
+
+            <div class="card text-dark bg-white">
+                <div class="card-header"><a href="blogs/TENSORFLOW学习笔记-1.html" class="text-dark">TENSORFLOW学习笔记-1</a></div>
+                <div class="card-body">
+                    <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
+                    <a href="blogs/TENSORFLOW学习笔记-1.html" class="btn btn-primary float-md-right">阅读全文</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+        <img src="asset/images/favicon.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,32 +70,35 @@
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分类</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
                         <a class="dropdown-item" href="#">机器学习</a>
-                        <a class="dropdown-item" href="#">待定</a>
-                        <a class="dropdown-item" href="#">待定</a>
+
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
                         <a class="dropdown-item" href="#">机器学习</a>
-                        <a class="dropdown-item" href="#">待定</a>
-                        <a class="dropdown-item" href="#">待定</a>
+                        <a class="dropdown-item" href="#">Tensorflow</a>
+                        <a class="dropdown-item" href="#">Python</a>
+                        <a class="dropdown-item" href="#">学习笔记</a>
+                        <a class="dropdown-item" href="#">神经网络</a>
+                        <a class="dropdown-item" href="#">深度学习</a>
+
                     </div>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="inputSearch" oninput="query(this)">
             </form>
         </div>
     </nav>
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
-            <div class="card text-white bg-dark" >
-                <div class="card-header"><a href="blogs/TENSORFLOW学习笔记-1.html" class="text-white">TENSORFLOW学习笔记-1</a><span class="figure-img float-md-right"><img src="asset/images/浏览量.png">&nbsp;1&nbsp;<img src="asset/images/评论数-10.png">&nbsp;0&nbsp;<img src="asset/images/点赞.png">&nbsp;0</span></div>
+            <div class="card text-dark bg-white" >
+                <div class="card-header bg-white"><a href="blogs/TENSORFLOW学习笔记-1.html" class="text-dark">TENSORFLOW学习笔记-1</a></div>
                 <div class="card-body">
                     <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
-                    <a href="#" class="btn btn-primary float-md-right">阅读全文</a>
+                    <a href="blogs/TENSORFLOW学习笔记-1.html" class="btn btn-primary float-md-right">阅读全文</a>
                 </div>
             </div>
             <hr>
@@ -69,13 +109,18 @@
                         <a class="page-link" href="#" tabindex="-1">Previous</a>
                     </li>
                     <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Next</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
+
+
+<!--                    <li class="page-item">-->
+<!--                        <a class="page-link" href="#">2</a>-->
+<!--                    </li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--                    <li class="page-item">-->
+<!--                        <a class="page-link" href="#">Next</a>-->
+<!--                    </li>-->
                 </ul>
             </nav>
 
@@ -83,41 +128,36 @@
 
         <div class="col-sm-4">
             <!-- 博主简介 -->
-            <div class="card text-white bg-dark">
-                <div class="card-header">博主简介</div>
+            <div class="card text-dark bg-white">
+                <div class="card-header bg-white">博主简介</div>
                 <div class="card-body">
-                    <h5 class="card-title">爱做梦真是太好了</h5>
-                    <p class="card-text">技术爱好者，目前职位是算法工程师。<br><br>2019.06.04写</p>
+                    <p class="card-text">性别男，技术爱好者，目前职位是算法工程师。<br><br>2019.06.04</p>
                 </div>
             </div>
             <hr>
-            <div class="card text-white bg-dark">
-                <div class="card-header">博客分类</div>
+            <div class="card text-dark bg-white">
+                <div class="card-header bg-white">热门分类</div>
                 <div class="card-body">
-                    <p class="card-text"><a href="#" class="text-white">机器学习</a></p>
-                    <p class="card-text"><a href="#" class="text-white">待定</a></p>
-                    <p class="card-text"><a href="#" class="text-white">待定</a></p>
-                    <p class="card-text"><a href="#" class="text-white">待定</a></p>
+                    <p class="card-text"><a href="#" class="text-dark">机器学习</a></p>
                 </div>
             </div>
 
             <hr>
 
-            <div class="card text-white bg-dark">
-                <div class="card-header">热门标签</div>
-
-
+            <div class="card text-dark bg-white">
+                <div class="card-header bg-white">热门标签</div>
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary btn-sm">机器学习</button>
-                    <button type="button" class="btn btn-secondary btn-sm">待定</button>
-                    <button type="button" class="btn btn-success btn-sm">待定</button>
-                    <button type="button" class="btn btn-danger btn-sm">待定</button><hr>
-                    <button type="button" class="btn btn-warning btn-sm">待定</button>
-                    <button type="button" class="btn btn-info btn-sm">待定</button>
-                    <button type="button" class="btn btn-light btn-sm">待定</button>
-                    <button type="button" class="btn btn-primary btn-sm">待定</button><hr>
+                    <button type="button" class="btn btn-primary btn-sm">机器学习&nbsp;<span class="badge badge-light">1</span>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm">Tensorflow&nbsp;<span class="badge badge-light">1</span></button>
+                    <button type="button" class="btn btn-success btn-sm">Python&nbsp;<span class="badge badge-light">1</span></button>
+                    <button type="button" class="btn btn-danger btn-sm">学习笔记&nbsp;<span class="badge badge-light">1</span></button><hr>
+                    <button type="button" class="btn btn-warning btn-sm">神经网络</button>
+                    <button type="button" class="btn btn-info btn-sm">深度学习</button>
                 </div>
             </div>
+
+            <hr>
         </div>
     </div>
 </div>
@@ -129,4 +169,21 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="asset/js/jquery-slim.min.js" ></script>
     <script src="asset/js/bootstrap.min.js"></script>
+    <script>
+        function query(object) {
+            let showView = document.getElementById("showView");
+            showView.style.visibility = "visible";
+            if (object.value == "") {
+                showView.style.visibility = "hidden";
+            }
+        }
+
+        function viewNoShow() {
+            document.getElementById("showView").style.visibility = "hidden";
+        }
+
+        function show() {
+            document.getElementById("showView").style.visibility = "visible";
+        }
+    </script>
 </body>

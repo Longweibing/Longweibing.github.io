@@ -10,7 +10,7 @@
 
 	<link rel="icon" href="../asset/images/favicon.jpg">
 
-	<title>Tensorflow学习笔记-1 | Wee bing</title>
+	<title>Tensorflow学习笔记-1 | 爱做梦真是太好了</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="../asset/css/bootstrap.min.css" rel="stylesheet">
@@ -18,83 +18,133 @@
 	<!-- Custom styles for this template -->
 	<link href="../asset/css/navbar-top-fixed.css" rel="stylesheet">
 
+    <style>
+        #showView {
+            position: absolute;
+            height: 60%;
+            width: 60%;
+            top: 20%;
+            left: 20%;
+            text-justify: auto;
+            overflow: auto;
+            z-index: 100;
+            visibility: hidden;
+            background-color: #FFFFFF;
+        }
+    </style>
+
 	<script>
 		hljs.initHighlightingOnLoad();
 	</script>
 </head>
 
-<body>
+<body style="background-color: #407ee7">
 <div class="container-fluid">
-	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		<img src="../asset/images/favicon.jpg">
-		<a class="navbar-brand" href="#">&nbsp爱做梦真是太好了</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="../index.html">主页</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分类</a>
-					<div class="dropdown-menu" aria-labelledby="dropdown03">
-						<a class="dropdown-item" href="#">机器学习</a>
-						<a class="dropdown-item" href="#">待定</a>
-						<a class="dropdown-item" href="#">待定</a>
-					</div>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
-					<div class="dropdown-menu" aria-labelledby="dropdown03">
-						<a class="dropdown-item" href="#">机器学习</a>
-						<a class="dropdown-item" href="#">待定</a>
-						<a class="dropdown-item" href="#">待定</a>
-					</div>
-				</li>
-			</ul>
-			<form class="form-inline mt-2 mt-md-0">
-				<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-			</form>
-		</div>
-	</nav>
+
+    <!-- 搜索界面 -->
+    <div id="showView">
+        <div>
+            <div class="card text-dark bg-white">
+                <div class="card-header"><a href="../blogs/TENSORFLOW学习笔记-1.html" class="text-white">TENSORFLOW学习笔记-1</a></div>
+                <div class="card-body">
+                    <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
+                    <a href="../blogs/TENSORFLOW学习笔记-1.html" class="btn btn-primary float-md-right">阅读全文</a>
+                </div>
+            </div>
+
+            <div class="card text-dark bg-white">
+                <div class="card-header"><a href="../blogs/TENSORFLOW学习笔记-1.html" class="text-dark">TENSORFLOW学习笔记-1</a></div>
+                <div class="card-body">
+                    <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
+                    <a href="../blogs/TENSORFLOW学习笔记-1.html" class="btn btn-primary float-md-right">阅读全文</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+        <img src="../asset/images/favicon.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">主页</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分类</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="#">机器学习</a>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="#">机器学习</a>
+                        <a class="dropdown-item" href="#">Tensorflow</a>
+                        <a class="dropdown-item" href="#">Python</a>
+                        <a class="dropdown-item" href="#">学习笔记</a>
+                        <a class="dropdown-item" href="#">神经网络</a>
+                        <a class="dropdown-item" href="#">深度学习</a>
+
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="inputSearch" oninput="query(this)">
+            </form>
+        </div>
+    </nav>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8">
-				<h2>Tensorflow学习笔记-1</h2>
+				<h2 class="text-white">Tensorflow学习笔记-1</h2>
 				<hr>
-				<p class="text-justify text-dark">Tensorflow是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的的工具。它主要由python语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用tensorflow不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些tensorflow的学习笔记，供我或者大家参考，具体细节还是看tensorflow官方文档更好。
+				<p class="text-justify text-white">Tensorflow是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的的工具。它主要由python语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用tensorflow不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些tensorflow的学习笔记，供我或者大家参考，具体细节还是看tensorflow官方文档更好。
 				</p>
 				<div class="image featured"><img src="../asset/images/tensorflow.jpg" style="max-width: 100%" alt="" /></div>
 				<hr>
 
-				<h3>Tensorflow基本概念</h3>
-				<p class="text-justify text-dark">张量和操作为计算图的基本组成元素，张量相当于边，操作相当于点。
-				<ul class="list-group-item-success">
-					<li>张量<br>
-						张量是对向量或者高维矩阵的泛化，用来表示图运算过程中的数据。<b><a href="https://www.tensorflow.org/api_docs/python/tf/Tensor">tf.Tensor</a></b>是它的API。
-					</li>
-					<li>操作<br>
-						数据与数据之间进行的计算被称为操作。小到常量、变量的初始化，大到矩阵之间的加减乘除都可以称为操作。
-					</li>
-					<li>常量<br>
-						用<b><a href="https://www.tensorflow.org/api_docs/python/tf/constant">tf.constant()</a></b>进行定义。常量为不需要变化的张量，输入数据为numpy的array等数据类型，请填写时注意一下。
-					</li>
+				<h3 class="text-white">Tensorflow基本概念</h3>
+				<p class="text-justify text-white">张量和操作为计算图的基本组成元素，张量相当于边，操作相当于点。
 
-					<li>变量<br>
-						用<b><a href="https://www.tensorflow.org/api_docs/python/tf/Variable">tf.Variable()</a></b>进行定义。变量主要用于需要被初始化的参数，如深度学习中的权重、偏置值，需要在训练开始前先进行初始化。
-					</li>
-
-					<li>占位符<br>
-						用<b><a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">tf.placeholder()</a></b>进行定义。占位符主要用于训练时需要动态获取的数据，如深度学习中的输入数据。每次训练迭代周期内，用feed_dict={}体现。（feed_dict作为sess.run()的一个参数）（请区分好变量和占位符的创建场景）<br><br>
-						以上概念所对应的方法最终返回的结果为张量。
-					</li>
-
-					</ul>
+                <table class="table">
+                    <thead class="bg-white">
+                    <tr class="text-center">
+                        <th scope="col">名词</th>
+                        <th scope="col">解释</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="bg-primary text-white">
+                        <th scope="row">张量</th>
+                        <td>张量是对向量或者高维矩阵的泛化，用来表示图运算过程中的数据。<b>tf.Tensor</b>是它的API。</td>
+                    </tr>
+                    <tr class="bg-success text-white">
+                        <th scope="row">操作</th>
+                        <td>数据与数据之间进行的计算被称为操作。小到常量、变量的初始化，大到矩阵之间的加减乘除都可以称为操作。</td>
+                    </tr>
+                    <tr class="bg-danger text-white">
+                        <th scope="row">常量</th>
+                        <td>用<b>tf.constant()</b>进行定义。常量为不需要变化的张量，输入数据为numpy的array等数据类型，请填写时注意一下。</td>
+                    </tr>
+                    <tr class="bg-info text-white">
+                        <th scope="row">变量</th>
+                        <td>用<b>tf.Variable()</b>进行定义。变量主要用于需要被初始化的参数，如深度学习中的权重、偏置值，需要在训练开始前先进行初始化。</td>
+                    </tr>
+                    <tr class="bg-dark text-white">
+                        <th scope="row">占位符</th>
+                        <td>用<b>tf.placeholder()</b>进行定义。占位符主要用于训练时需要动态获取的数据，如深度学习中的输入数据。每次训练迭代周期内，用feed_dict={}体现。（feed_dict作为sess.run()的一个参数）（请区分好变量和占位符的创建场景）</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="text-white">以上概念所对应的方法最终返回的结果为张量。</p>
 					<hr>
 
-					<h3>Tensorflow构建过程</h3>
+					<h3 class="text-white">Tensorflow构建过程</h3>
 					<ol class="list-group-item-success">
 						<li>创建图<br>
 							创建张量<br>
@@ -133,9 +183,9 @@ with tf.Session() as sess:
     print(sess.run(y))
 
 								</code></pre>
-					<p class="text-justify">先导入必要的模块，然后定义数据和图的骨架，最后在tf.Session中运行结果。</p>
+					<p class="text-justify text-white">先导入必要的模块，然后定义数据和图的骨架，最后在tf.Session中运行结果。</p>
 				<hr>
-				<div class="float-md-right small">文章更新于<span class="text-success">2019年6月6日</span></div>
+				<div class="float-md-right small text-white">文章更新于<span class="text-white">2019年6月6日</span></div>
 
 				<!-- 来必力City版安装代码 -->
 				<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyNS84NTg5">
@@ -157,46 +207,40 @@ with tf.Session() as sess:
 				<!-- City版安装代码已完成 -->
 			</div>
 
-			<div class="col-sm-4">
-				<!-- 博主简介 -->
-				<div class="card text-white bg-dark">
-					<div class="card-header">博主简介</div>
-					<div class="card-body">
-						<h5 class="card-title">爱做梦真是太好了</h5>
-						<p class="card-text">技术爱好者，目前职位是算法工程师。<br><br>2019.06.04写</p>
-					</div>
-				</div>
-				<hr>
-				<div class="card text-white bg-dark">
-					<div class="card-header">博客分类</div>
-					<div class="card-body">
-						<p class="card-text"><a href="#" class="text-white">机器学习</a></p>
-						<p class="card-text"><a href="#" class="text-white">待定</a></p>
-						<p class="card-text"><a href="#" class="text-white">待定</a></p>
-						<p class="card-text"><a href="#" class="text-white">待定</a></p>
-					</div>
-				</div>
+            <div class="col-sm-4">
+                <!-- 博主简介 -->
+                <div class="card text-dark bg-white">
+                    <div class="card-header bg-white">博主简介</div>
+                    <div class="card-body">
+                        <p class="card-text">性别男，技术爱好者，目前职位是算法工程师。<br><br>2019.06.04</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="card text-dark bg-white">
+                    <div class="card-header bg-white">热门分类</div>
+                    <div class="card-body">
+                        <p class="card-text"><a href="#" class="text-dark">机器学习</a></p>
+                    </div>
+                </div>
 
-				<hr>
+                <hr>
 
-				<div class="card text-white bg-dark">
-					<div class="card-header">热门标签</div>
+                <div class="card text-dark bg-white">
+                    <div class="card-header bg-white">热门标签</div>
+                    <div class="card-body">
+                        <button type="button" class="btn btn-primary btn-sm">机器学习&nbsp;<span class="badge badge-light">1</span></button>
+                        <button type="button" class="btn btn-secondary btn-sm">Tensorflow&nbsp;<span class="badge badge-light">1</span></button>
+                        <button type="button" class="btn btn-success btn-sm">Python&nbsp;<span class="badge badge-light">1</span></button>
+                        <button type="button" class="btn btn-danger btn-sm">学习笔记&nbsp;<span class="badge badge-light">1</span></button><hr>
+                        <button type="button" class="btn btn-warning btn-sm">神经网络</button>
+                        <button type="button" class="btn btn-info btn-sm">深度学习</button>
+                    </div>
+                </div>
 
-
-					<div class="card-body">
-						<button type="button" class="btn btn-primary btn-sm">机器学习</button>
-						<button type="button" class="btn btn-secondary btn-sm">待定</button>
-						<button type="button" class="btn btn-success btn-sm">待定</button>
-						<button type="button" class="btn btn-danger btn-sm">待定</button><hr>
-						<button type="button" class="btn btn-warning btn-sm">待定</button>
-						<button type="button" class="btn btn-info btn-sm">待定</button>
-						<button type="button" class="btn btn-light btn-sm">待定</button>
-						<button type="button" class="btn btn-primary btn-sm">待定</button><hr>
-					</div>
-				</div>
-			</div>
-		</div>
+                <hr>
+            </div>
 	</div>
+    </div>
 
 </div>
 <!-- Bootstrap core JavaScript
@@ -204,4 +248,21 @@ with tf.Session() as sess:
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="../asset/js/jquery-slim.min.js" ></script>
 <script src="../asset/js/bootstrap.min.js"></script>
+<script>
+    function query(object) {
+        let showView = document.getElementById("showView");
+        showView.style.visibility = "visible";
+        if (object.value == "") {
+            showView.style.visibility = "hidden";
+        }
+    }
+
+    function viewNoShow() {
+        document.getElementById("showView").style.visibility = "hidden";
+    }
+
+    function show() {
+        document.getElementById("showView").style.visibility = "visible";
+    }
+</script>
 </body>

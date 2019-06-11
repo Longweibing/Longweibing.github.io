@@ -37,23 +37,6 @@
 
     <!-- 搜索界面 -->
     <div id="showView">
-<!--        <div>-->
-            <div class="card text-dark bg-white">
-                <div class="card-header bg-white"><a href="blogs/TENSORFLOW学习笔记-1.html" class="text-dark">TENSORFLOW学习笔记-1</a></div>
-                <div class="card-body">
-                    <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
-                    <a href="blogs/TENSORFLOW学习笔记-1.html" class="btn btn-primary float-md-right">阅读全文</a>
-                </div>
-            </div>
-
-<!--            <div class="card text-dark bg-white">-->
-<!--                <div class="card-header bg-white"><a href="blogs/实现数组元素互换位置（乘机理解java参数传递）.html" class="text-dark">实现数组元素互换位置（乘机理解java参数传递）</a></div>-->
-<!--                <div class="card-body">-->
-<!--                    <p class="card-text">Java中函数参数是按值传递的，在实现数组元素互换位置之前，我想先说一下Java函数参数传递过程。一般情况下我们会把参数分为基本数据类型和引用数据类型，然后分别来讲参数传递，因为他们的外在表现似乎是不同的，然而，他们的本质都是值传递。在讲值传递时，请务必将“实参的副本”这五个字刻在脑海，因为它是理解值传递的关键。</p>-->
-<!--                    <a href="blogs/实现数组元素互换位置（乘机理解java参数传递）.html" class="btn btn-primary float-md-right">阅读全文</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
@@ -248,7 +231,7 @@
                         "                <div class=\"card-header bg-white\">" + titleStr + "</div>\n" +
                         "                <div class=\"card-body\">\n" +
                         "                    <p class=\"card-text\">" + titleAndContent[1].split("  ")[0] + "</p>\n" +
-                        "                    <a href=\"blogs/TENSORFLOW学习笔记-1.html\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
+                        "                    <a href=\"blogs/" + titleAndContent[0] + "\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
                         "                </div>\n" +
                         "            </div>";
 
@@ -265,7 +248,7 @@
                                 "                <div class=\"card-header bg-white\">" + titleStr + "</div>\n" +
                                 "                <div class=\"card-body\">\n" +
                                 "                    <p class=\"card-text\">" + content[i].replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</p>\n" +
-                                "                    <a href=\"blogs/TENSORFLOW学习笔记-1.html\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
+                                "                    <a href=\"blogs/" + titleAndContent[0] + "\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
                                 "                </div>\n" +
                                 "            </div>";
 

@@ -43,23 +43,6 @@
 
     <!-- 搜索界面 -->
     <div id="showView">
-        <div>
-            <div class="card text-dark bg-white">
-                <div class="card-header bg-white"><a href="../blogs/TENSORFLOW学习笔记-1.html" class="text-dark">TENSORFLOW学习笔记-1</a></div>
-                <div class="card-body">
-                    <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
-                    <a href="../blogs/TENSORFLOW学习笔记-1.html" class="btn btn-primary float-md-right">阅读全文</a>
-                </div>
-            </div>
-
-            <div class="card text-dark bg-white">
-                <div class="card-header bg-white"><a href="../blogs/TENSORFLOW学习笔记-1.html" class="text-dark">TENSORFLOW学习笔记-1</a></div>
-                <div class="card-body">
-                    <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
-                    <a href="../blogs/TENSORFLOW学习笔记-1.html" class="btn btn-primary float-md-right">阅读全文</a>
-                </div>
-            </div>
-        </div>
     </div>
 
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
@@ -261,10 +244,56 @@ private void exchange(int[] nums, int x, int y) {
 <script>
     function query(object) {
         let showView = document.getElementById("showView");
+        showView.innerHTML = "";
+
+        let text = readfile("../asset/index/search_index.txt");
+        let keywords = object.value.trim();
+        let allLines = text.split("\n");
+        for (let index in allLines) {
+            let titleAndContent = allLines[index].split("    ");
+            if (titleAndContent[0].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {  // 博客标题中包含关键字的处理
+                let rootDiv = document.createElement("div");
+                rootDiv.className = "card-header bg-white";
+                let titleStr = "<a href=\""+ titleAndContent[0] + "\" class=\"text-dark\">" +
+                    titleAndContent[0].replace('.html', '').replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</a>";
+                rootDiv.innerHTML = "<div class=\"card text-dark bg-white\">\n" +
+                    "                <div class=\"card-header bg-white\">" + titleStr + "</div>\n" +
+                    "                <div class=\"card-body\">\n" +
+                    "                    <p class=\"card-text\">" + titleAndContent[1].split("  ")[0] + "</p>\n" +
+                    "                    <a href=\"" + titleAndContent[0] + "\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
+                    "                </div>\n" +
+                    "            </div>";
+
+                showView.appendChild(rootDiv);
+
+            } else {
+                let content = titleAndContent[1].split("  ");
+                for (let i in content) {
+                    if (content[i].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {
+                        let rootDiv = document.createElement("div");
+                        rootDiv.className = "card-header bg-white";
+                        let titleStr = "<a href=\""+ titleAndContent[0] + "\" class=\"text-dark\">" + titleAndContent[0].replace('.html', '') + "</a>";
+                        rootDiv.innerHTML = "<div class=\"card text-dark bg-white\">\n" +
+                            "                <div class=\"card-header bg-white\">" + titleStr + "</div>\n" +
+                            "                <div class=\"card-body\">\n" +
+                            "                    <p class=\"card-text\">" + content[i].replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</p>\n" +
+                            "                    <a href=\"" + titleAndContent[0] + "\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
+                            "                </div>\n" +
+                            "            </div>";
+
+                        showView.appendChild(rootDiv);
+                        break;
+                    }
+                }
+            }
+        }
         showView.style.visibility = "visible";
-        if (object.value == "") {
+
+        // 如果搜索输入框中的关键字为空或者不匹配博客内容，则将搜索界面隐藏。
+        if (object.value.trim() === "" || showView.innerHTML === "") {
             showView.style.visibility = "hidden";
         }
+
     }
 
     function viewNoShow() {
@@ -273,6 +302,16 @@ private void exchange(int[] nums, int x, int y) {
 
     function show() {
         document.getElementById("showView").style.visibility = "visible";
+    }
+
+    // 读文件内容
+    function readfile(filepath) {
+        let xhr = new XMLHttpRequest(),
+            okStatus = document.location.protocol === "file:" ? 0 : 200;
+        xhr.open('GET', filepath, false);
+        xhr.overrideMimeType("text/html;charset=utf-8");//默认为utf-8
+        xhr.send(null);
+        return xhr.status === okStatus ? xhr.responseText : null;
     }
 </script>
 </body>

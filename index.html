@@ -16,6 +16,10 @@
     <link href="asset/css/navbar-top-fixed.css" rel="stylesheet">
 
     <style>
+        body {
+            font-family: "Courier New", monospace;
+        }
+
         #showView {
             position: fixed;
             height: 60%;
@@ -29,17 +33,21 @@
             background-color: #FFFFFF;
         }
 
+        a:hover {
+            text-decoration:none;
+        }
+
     </style>
 </head>
 
-<body style="background-color: #407ee7">
+<body style="background-color: #FFFFFF">
 <div class="container-fluid">
 
     <!-- 搜索界面 -->
     <div id="showView">
     </div>
 
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+    <nav id="nav" class="navbar navbar-expand-md navbar-light fixed-top bg-white">
         <img src="asset/images/favicon.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,14 +59,14 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分类</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                    <div class="dropdown-menu border-white" aria-labelledby="dropdown03">
                         <a class="dropdown-item" href="#">机器学习</a>
 
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                    <div class="dropdown-menu border-white" aria-labelledby="dropdown03">
                         <a class="dropdown-item" href="#">机器学习</a>
                         <a class="dropdown-item" href="#">Tensorflow</a>
                         <a class="dropdown-item" href="#">Python</a>
@@ -68,26 +76,18 @@
 
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="changeDark()">夜间模式</a>
+                </li>
             </ul>
+
             <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="inputSearch" oninput="query(this)">
+                <input class="form-control mr-sm-2 border-white" type="text" placeholder="Search" aria-label="Search" id="inputSearch" oninput="query(this)">
             </form>
         </div>
     </nav>
 <div class="container">
     <!-- 今日推荐 -->
-    <!--        <div class="row">-->
-    <!--            <div class="card mb-4 col-sm-12">-->
-    <!--                <img src="../asset/images/algorithms-part1.PNG" class="card-img-top" alt="Algorithms, Part I">-->
-    <!--                <div class="card-body">-->
-    <!--                    <h5 class="card-title"><a href="https://www.coursera.org/learn/algorithms-part1">Algorithms, Part I</a></h5>-->
-    <!--                    <p class="card-text">算法（第四版）是Courser网站中广受好评的有关算法编程的课程，因此我推荐给大家。通过这门课程，能使你的编程动手能力大大提高，也是你进一步掌握Java语言。这门课程的亮点包括：免费、五个富有挑战的编程题、视频讲解清楚易懂，因此希望大家学习！-->
-    <!--                    </p>-->
-    <!--                    <p class="card-text"><small class="text-muted">更新于2019年六月十号</small></p>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-
     <div class="bd-example">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -96,7 +96,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="asset/images/algorithms-part1.PNG" class="d-block w-100" alt="...">
+                    <a href="https://www.coursera.org/learn/algorithms-part1"><img src="asset/images/algorithms-part1.PNG" class="d-block w-100" alt="..."></a>
                     <div class="carousel-caption d-none d-md-block">
                         <h5><a href="https://www.coursera.org/learn/algorithms-part1">Algorithms, Part I</a></h5>
                         <p class="text-success">
@@ -105,7 +105,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="asset/images/ranking.png" class="d-block w-100" alt="...">
+                    <a href="https://blog.csdn.net/github_37412255/article/details/54731005"><img src="asset/images/ranking.png" class="d-block w-100" alt="..."></a>
                     <div class="carousel-caption d-none d-md-block">
                         <h5><a href="https://blog.csdn.net/github_37412255/article/details/54731005">排序算法实现</a></h5>
                         <p class="text-danger">
@@ -124,12 +124,12 @@
             </a>
         </div>
     </div>
-    <hr style="border-color: #407ee7">
+    <hr id="split1" style="border-color: #FFFFFF">
 
-    <div class="row">
+    <div id="blogListAndRightMeta" class="row">
         <div class="col-sm-8">
-            <div class="card text-dark bg-white" >
-                <div class="card-header bg-white"><a href="blogs/TENSORFLOW学习笔记-1.html" class="text-dark">TENSORFLOW学习笔记-1</a></div>
+            <div class="card text-dark bg-white border-white" >
+                <div class="card-header bg-white border-white"><a href="blogs/TENSORFLOW学习笔记-1.html" class="text-dark">TENSORFLOW学习笔记-1</a></div>
                 <div class="card-body">
                     <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
                     <a href="blogs/TENSORFLOW学习笔记-1.html" class="btn btn-primary float-md-right">阅读全文</a>
@@ -137,14 +137,13 @@
             </div>
             <hr>
 
-            <div class="card text-dark bg-white">
-                <div class="card-header bg-white"><a href="blogs/实现数组元素互换位置（乘机理解java参数传递）.html" class="text-dark">实现数组元素互换位置（乘机理解java参数传递）</a></div>
+            <div class="card text-dark bg-white border-white">
+                <div class="card-header bg-white border-white"><a href="blogs/实现数组元素互换位置（乘机理解java参数传递）.html" class="text-dark">实现数组元素互换位置（乘机理解java参数传递）</a></div>
                 <div class="card-body">
                     <p class="card-text">Java中函数参数是按值传递的，在实现数组元素互换位置之前，我想先说一下Java函数参数传递过程。一般情况下我们会把参数分为基本数据类型和引用数据类型，然后分别来讲参数传递，因为他们的外在表现似乎是不同的，然而，他们的本质都是值传递。在讲值传递时，请务必将“实参的副本”这五个字刻在脑海，因为它是理解值传递的关键。</p>
                     <a href="blogs/实现数组元素互换位置（乘机理解java参数传递）.html" class="btn btn-primary float-md-right">阅读全文</a>
                 </div>
             </div>
-            <hr>
 
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
@@ -155,31 +154,22 @@
                     <li class="page-item disabled">
                         <a class="page-link" href="#" tabindex="-1">Next</a>
                     </li>
-
-
-<!--                    <li class="page-item">-->
-<!--                        <a class="page-link" href="#">2</a>-->
-<!--                    </li>-->
-<!--                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-<!--                    <li class="page-item">-->
-<!--                        <a class="page-link" href="#">Next</a>-->
-<!--                    </li>-->
                 </ul>
             </nav>
 
         </div>
 
-        <div class="col-sm-4">
+        <div id="rightMeta" class="col-sm-4">
             <!-- 博主简介 -->
-            <div class="card text-dark bg-white">
-                <div class="card-header bg-white">博主简介</div>
-                <div class="card-body">
+            <div name="meta" class="card text-dark bg-white border-white">
+                <div name="meta" class="card-header bg-white border-white">博主简介</div>
+                <div name="meta" class="card-body">
                     <p class="card-text">性别男，技术爱好者，目前职位是算法工程师。<br><br>2019.06.04</p>
                 </div>
             </div>
             <hr>
-            <div class="card text-dark bg-white">
-                <div class="card-header bg-white">热门分类</div>
+            <div name="meta" class="card text-dark bg-white border-white">
+                <div class="card-header bg-white border-white">热门分类</div>
                 <div class="card-body">
                     <p class="card-text"><a href="#" class="text-dark">机器学习</a></p>
                 </div>
@@ -187,14 +177,14 @@
 
             <hr>
 
-            <div class="card text-dark bg-white">
-                <div class="card-header bg-white">热门标签</div>
+            <div class="card text-dark bg-white border-white">
+                <div class="card-header bg-white border-white">热门标签</div>
                 <div class="card-body">
                     <button type="button" class="btn btn-primary btn-sm">机器学习
                     </button>
                     <button type="button" class="btn btn-secondary btn-sm">Tensorflow</button>
                     <button type="button" class="btn btn-success btn-sm">Python</button>
-                    <button type="button" class="btn btn-danger btn-sm">学习笔记</button><hr>
+                    <button type="button" class="btn btn-danger btn-sm">学习笔记</button>
                     <button type="button" class="btn btn-warning btn-sm">神经网络</button>
                     <button type="button" class="btn btn-info btn-sm">深度学习</button>
                 </div>
@@ -223,36 +213,28 @@
             for (let index in allLines) {
                 let titleAndContent = allLines[index].split("    ");
                 if (titleAndContent[0].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {  // 博客标题中包含关键字的处理
-                    let rootDiv = document.createElement("div");
-                    rootDiv.className = "card-header bg-white";
                     let titleStr = "<a href=\"blogs/"+ titleAndContent[0] + "\" class=\"text-dark\">" +
                         titleAndContent[0].replace('.html', '').replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</a>";
-                    rootDiv.innerHTML = "<div class=\"card text-dark bg-white\">\n" +
-                        "                <div class=\"card-header bg-white\">" + titleStr + "</div>\n" +
+                    showView.innerHTML = "<div class=\"card text-dark bg-white border-white\">\n" +
+                        "                <div class=\"card-header bg-white border-white\">" + titleStr + "</div>\n" +
                         "                <div class=\"card-body\">\n" +
                         "                    <p class=\"card-text\">" + titleAndContent[1].split("  ")[0] + "</p>\n" +
                         "                    <a href=\"blogs/" + titleAndContent[0] + "\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
                         "                </div>\n" +
                         "            </div>";
 
-                    showView.appendChild(rootDiv);
-
                 } else {
                     let content = titleAndContent[1].split("  ");
                     for (let i in content) {
                         if (content[i].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {
-                            let rootDiv = document.createElement("div");
-                            rootDiv.className = "card-header bg-white";
                             let titleStr = "<a href=\"blogs/"+ titleAndContent[0] + "\" class=\"text-dark\">" + titleAndContent[0].replace('.html', '') + "</a>";
-                            rootDiv.innerHTML = "<div class=\"card text-dark bg-white\">\n" +
-                                "                <div class=\"card-header bg-white\">" + titleStr + "</div>\n" +
+                            showView.innerHTML = "<div class=\"card text-dark bg-white border-white\">\n" +
+                                "                <div class=\"card-header bg-white border-white\">" + titleStr + "</div>\n" +
                                 "                <div class=\"card-body\">\n" +
                                 "                    <p class=\"card-text\">" + content[i].replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</p>\n" +
                                 "                    <a href=\"blogs/" + titleAndContent[0] + "\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
                                 "                </div>\n" +
                                 "            </div>";
-
-                            showView.appendChild(rootDiv);
                             break;
                         }
                     }
@@ -267,10 +249,6 @@
 
         }
 
-        function viewNoShow() {
-            document.getElementById("showView").style.visibility = "hidden";
-        }
-
         function show() {
             document.getElementById("showView").style.visibility = "visible";
         }
@@ -283,6 +261,170 @@
             xhr.overrideMimeType("text/html;charset=utf-8");//默认为utf-8
             xhr.send(null);
             return xhr.status === okStatus ? xhr.responseText : null;
+        }
+
+        // 夜间模式
+        function changeDark() {
+            let body = document.body;
+            body.style.backgroundColor = "#353a40";
+            // 导航栏变暗
+            let nav = document.getElementById("nav");
+            nav.className = "navbar navbar-expand-md navbar-dark fixed-top bg-dark";
+            nav.innerHTML = "<img src=\"asset/images/favicon.jpg\">&nbsp;&nbsp;&nbsp;&nbsp;\n" +
+                "        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
+                "            <span class=\"navbar-toggler-icon\"></span>\n" +
+                "        </button>\n" +
+                "        <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n" +
+                "            <ul class=\"navbar-nav mr-auto\">\n" +
+                "                <li class=\"nav-item active\">\n" +
+                "                    <a class=\"nav-link\" href=\"index.html\">主页</a>\n" +
+                "                </li>\n" +
+                "                <li class=\"nav-item dropdown\">\n" +
+                "                    <a class=\"nav-link dropdown-toggle\" href=\"http://example.com\" id=\"dropdown01\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">分类</a>\n" +
+                "                    <div class=\"dropdown-menu text-white-50 bg-dark border-dark\" aria-labelledby=\"dropdown03\">\n" +
+                "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">机器学习</a>\n" +
+                "\n" +
+                "                    </div>\n" +
+                "                </li>\n" +
+                "                <li class=\"nav-item dropdown\">\n" +
+                "                    <a class=\"nav-link dropdown-toggle\" href=\"http://example.com\" id=\"dropdown02\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">标签</a>\n" +
+                "                    <div class=\"dropdown-menu bg-dark border-dark\" aria-labelledby=\"dropdown03\">\n" +
+                "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">机器学习</a>\n" +
+                "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">Tensorflow</a>\n" +
+                "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">Python</a>\n" +
+                "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">学习笔记</a>\n" +
+                "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">神经网络</a>\n" +
+                "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">深度学习</a>\n" +
+                "\n" +
+                "                    </div>\n" +
+                "                </li>\n" +
+                "                <li class=\"nav-item\">\n" +
+                "                    <a class=\"nav-link\" href=\"index.html\">白天模式</a>\n" +
+                "                </li>\n" +
+                "            </ul>\n" +
+                "\n" +
+                "            <form class=\"form-inline mt-2 mt-md-0\">\n" +
+                "                <input class=\"form-control mr-sm-2 bg-dark border-dark\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\" id=\"inputSearch\" oninput=\"query2(this)\">\n" +
+                "            </form>\n" +
+                "        </div>";
+            document.getElementById("split1").style.borderColor = "#353a40";
+
+            // 博客列表和其他
+            let blogListAndRightMeta = document.getElementById("blogListAndRightMeta");
+            blogListAndRightMeta.className = "row";
+            blogListAndRightMeta.innerHTML = " <div class=\"col-sm-8\">\n" +
+                "            <div class=\"card text-white-50 bg-dark border-dark\" >\n" +
+                "                <div class=\"card-header bg-dark border-dark\"><a href=\"blogs/TENSORFLOW学习笔记-1.html\" class=\"text-dark\">TENSORFLOW学习笔记-1</a></div>\n" +
+                "                <div class=\"card-body\">\n" +
+                "                    <p class=\"card-text\">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>\n" +
+                "                    <a href=\"blogs/TENSORFLOW学习笔记-1.html\" class=\"btn btn-dark float-md-right text-white-50\">阅读全文</a>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "            <hr>\n" +
+                "\n" +
+                "            <div class=\"card text-white-50 bg-dark border-dark\">\n" +
+                "                <div class=\"card-header bg-dark border-dark\"><a href=\"blogs/实现数组元素互换位置（乘机理解java参数传递）.html\" class=\"text-dark\">实现数组元素互换位置（乘机理解java参数传递）</a></div>\n" +
+                "                <div class=\"card-body\">\n" +
+                "                    <p class=\"card-text\">Java中函数参数是按值传递的，在实现数组元素互换位置之前，我想先说一下Java函数参数传递过程。一般情况下我们会把参数分为基本数据类型和引用数据类型，然后分别来讲参数传递，因为他们的外在表现似乎是不同的，然而，他们的本质都是值传递。在讲值传递时，请务必将“实参的副本”这五个字刻在脑海，因为它是理解值传递的关键。</p>\n" +
+                "                    <a href=\"blogs/实现数组元素互换位置（乘机理解java参数传递）.html\" class=\"btn btn-dark text-white-50 float-md-right\">阅读全文</a>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "\n" +
+                "            <nav aria-label=\"Page navigation example\">\n" +
+                "                <ul class=\"pagination justify-content-end\">\n" +
+                "                    <li class=\"page-item disabled\">\n" +
+                "                        <a class=\"page-link bg-dark border-dark\" href=\"#\" tabindex=\"-1\">Previous</a>\n" +
+                "                    </li>\n" +
+                "                    <li class=\"page-item active\"><a class=\"page-link bg-dark border-dark\" href=\"#\">1 <span class=\"sr-only\">(current)</span></a></li>\n" +
+                "                    <li class=\"page-item disabled\">\n" +
+                "                        <a class=\"page-link bg-dark border-dark\" href=\"#\" tabindex=\"-1\">Next</a>\n" +
+                "                    </li>\n" +
+                "                </ul>\n" +
+                "            </nav>\n" +
+                "\n" +
+                "        </div>\n" +
+                "\n" +
+                "        <div id=\"rightMeta\" class=\"col-sm-4\">\n" +
+                "            <!-- 博主简介 -->\n" +
+                "            <div name=\"meta\" class=\"card text-white-50 bg-dark border-dark\">\n" +
+                "                <div name=\"meta\" class=\"card-header bg-dark border-dark\">博主简介</div>\n" +
+                "                <div name=\"meta\" class=\"card-body\">\n" +
+                "                    <p class=\"card-text\">性别男，技术爱好者，目前职位是算法工程师。<br><br>2019.06.04</p>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "            <hr>\n" +
+                "            <div name=\"meta\" class=\"card text-white-50 bg-dark border-dark\">\n" +
+                "                <div class=\"card-header bg-dark border-dark\">热门分类</div>\n" +
+                "                <div class=\"card-body\">\n" +
+                "                    <p class=\"card-text\"><a href=\"#\" class=\"text-white-50\">机器学习</a></p>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "\n" +
+                "            <hr>\n" +
+                "\n" +
+                "            <div class=\"card text-white-50 bg-dark border-dark\">\n" +
+                "                <div class=\"card-header bg-dark border-dark\">热门标签</div>\n" +
+                "                <div class=\"card-body\">\n" +
+                "                    <button type=\"button\" class=\"btn btn-primary btn-sm\">机器学习\n" +
+                "                    </button>\n" +
+                "                    <button type=\"button\" class=\"btn btn-secondary btn-sm\">Tensorflow</button>\n" +
+                "                    <button type=\"button\" class=\"btn btn-success btn-sm\">Python</button>\n" +
+                "                    <button type=\"button\" class=\"btn btn-danger btn-sm\">学习笔记</button>\n" +
+                "                    <button type=\"button\" class=\"btn btn-warning btn-sm\">神经网络</button>\n" +
+                "                    <button type=\"button\" class=\"btn btn-info btn-sm\">深度学习</button>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "\n" +
+                "            <hr>";
+
+        }
+
+        // 夜间搜索界面
+        function query2(object) {
+            let showView = document.getElementById("showView");
+            showView.innerHTML = "";
+            showView.style.backgroundColor = "#353a40";
+
+            let text = readfile("asset/index/search_index.txt");
+            let keywords = object.value.trim();
+            let allLines = text.split("\n");
+            for (let index in allLines) {
+                let titleAndContent = allLines[index].split("    ");
+                if (titleAndContent[0].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {  // 博客标题中包含关键字的处理
+                    let titleStr = "<a href=\"blogs/"+ titleAndContent[0] + "\" class=\"text-white-50\">" +
+                        titleAndContent[0].replace('.html', '').replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</a>";
+                    showView.innerHTML = "<div class=\"card text-white-50 bg-dark border-dark\">\n" +
+                        "                <div class=\"card-header bg-dark border-dark\">" + titleStr + "</div>\n" +
+                        "                <div class=\"card-body\">\n" +
+                        "                    <p class=\"card-text\">" + titleAndContent[1].split("  ")[0] + "</p>\n" +
+                        "                    <a href=\"blogs/" + titleAndContent[0] + "\" class=\"btn btn-dark text-white-50  float-md-right\">阅读全文</a>\n" +
+                        "                </div>\n" +
+                        "            </div>";
+
+                } else {
+                    let content = titleAndContent[1].split("  ");
+                    for (let i in content) {
+                        if (content[i].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {
+                            let titleStr = "<a href=\"blogs/"+ titleAndContent[0] + "\" class=\"text-white-50\">" + titleAndContent[0].replace('.html', '') + "</a>";
+                            showView.innerHTML = "<div class=\"card text-white-50 bg-dark border-dark\">\n" +
+                                "                <div class=\"card-header bg-dark border-dark\">" + titleStr + "</div>\n" +
+                                "                <div class=\"card-body\">\n" +
+                                "                    <p class=\"card-text\">" + content[i].replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</p>\n" +
+                                "                    <a href=\"blogs/" + titleAndContent[0] + "\" class=\"btn btn-dark text-white-50 float-md-right\">阅读全文</a>\n" +
+                                "                </div>\n" +
+                                "            </div>";
+                            break;
+                        }
+                    }
+                }
+            }
+            showView.style.visibility = "visible";
+
+            // 如果搜索输入框中的关键字为空或者不匹配博客内容，则将搜索界面隐藏。
+            if (object.value.trim() === "" || showView.innerHTML === "") {
+                showView.style.visibility = "hidden";
+            }
+
         }
     </script>
 

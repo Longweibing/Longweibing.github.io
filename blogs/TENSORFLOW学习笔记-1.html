@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../asset/css/styles/darkula.css"/>
 	<script src="../asset/js/highlight.pack.js"></script>
 
-	<link rel="icon" href="../asset/images/favicon.jpg">
+	<link rel="icon" href="../asset/images/L.jpg">
 
 	<title>Tensorflow学习笔记-1 | 爱做梦真是太好了</title>
 
@@ -54,7 +54,7 @@
     </div>
 
     <nav id="nav" class="navbar navbar-expand-md navbar-light fixed-top bg-white">
-        <img src="../asset/images/favicon.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="../asset/images/L.jpg">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -130,10 +130,10 @@
                 </a>
             </div>
         </div>
-        <hr style="border-color: #FFFFFF">
+        <hr id="split1" style="border-color: #FFFFFF">
 
 		<div id="blogListAndRightMeta" class="row">
-			<div class="col-sm-8 bg-white">
+			<div id="blogContent" class="col-sm-8 bg-white">
 				<h2 style="margin-top: 2rem">Tensorflow学习笔记-1</h2>
 				<hr>
 				<p class="text-justify">Tensorflow是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的的工具。它主要由python语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用tensorflow不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些tensorflow的学习笔记，供我或者大家参考，具体细节还是看tensorflow官方文档更好。
@@ -240,7 +240,7 @@ with tf.Session() as sess:
 				<!-- City版安装代码已完成 -->
 			</div>
 
-            <div class="col-sm-4">
+            <div id="meta" class="col-sm-4">
                 <!-- 博主简介 -->
                 <div class="card text-dark bg-white border-white">
                     <div class="card-header bg-white border-white">博主简介</div>
@@ -261,18 +261,18 @@ with tf.Session() as sess:
                 <div class="card text-dark bg-white border-white">
                     <div class="card-header bg-white border-white">热门标签</div>
                     <div class="card-body">
-                        <button type="button" class="btn btn-primary btn-sm">机器学习</button>
-                        <button type="button" class="btn btn-secondary btn-sm">Tensorflow</button>
-                        <button type="button" class="btn btn-success btn-sm">Python</button>
-                        <button type="button" class="btn btn-danger btn-sm">学习笔记</button>
-                        <button type="button" class="btn btn-warning btn-sm">神经网络</button>
-                        <button type="button" class="btn btn-info btn-sm">深度学习</button>
+                        <button type="button" class="btn btn-primary btn-sm" style="margin-bottom: 5px">机器学习</button>
+                        <button type="button" class="btn btn-secondary btn-sm" style="margin-bottom: 5px">Tensorflow</button>
+                        <button type="button" class="btn btn-success btn-sm" style="margin-bottom: 5px">Python</button>
+                        <button type="button" class="btn btn-danger btn-sm" style="margin-bottom: 5px">学习笔记</button>
+                        <button type="button" class="btn btn-warning btn-sm" style="margin-bottom: 5px">神经网络</button>
+                        <button type="button" class="btn btn-info btn-sm" style="margin-bottom: 5px">深度学习</button>
                     </div>
                 </div>
 
                 <hr>
             </div>
-	</div>
+	    </div>
     </div>
 
 </div>
@@ -354,7 +354,7 @@ with tf.Session() as sess:
         // 导航栏变暗
         let nav = document.getElementById("nav");
         nav.className = "navbar navbar-expand-md navbar-dark fixed-top bg-dark";
-        nav.innerHTML = "<img src=\"../asset/images/favicon.jpg\">&nbsp;&nbsp;&nbsp;&nbsp;\n" +
+        nav.innerHTML = "<img src=\"../asset/images/L.jpg\">\n" +
             "        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
             "            <span class=\"navbar-toggler-icon\"></span>\n" +
             "        </button>\n" +
@@ -383,7 +383,7 @@ with tf.Session() as sess:
             "                    </div>\n" +
             "                </li>\n" +
             "                <li class=\"nav-item\">\n" +
-            "                    <a class=\"nav-link\" href=\"index.html\">白天模式</a>\n" +
+            "                    <a class=\"nav-link\" href=\"TENSORFLOW学习笔记-1.html\">白天模式</a>\n" +
             "                </li>\n" +
             "            </ul>\n" +
             "\n" +
@@ -394,9 +394,39 @@ with tf.Session() as sess:
         document.getElementById("split1").style.borderColor = "#353a40";
 
         // 博客列表和其他
-        let blogListAndRightMeta = document.getElementById("blogListAndRightMeta");
-        blogListAndRightMeta.className = "row";
-        blogListAndRightMeta.innerHTML = "";
+        let blogContent = document.getElementById("blogContent");
+        blogContent.className = "col-sm-8 bg-dark text-white-50";
+        let meta = document.getElementById("meta");
+        meta.className = "col-sm-4";
+        meta.innerHTML = " <div class=\"card text-white-50 bg-dark border-dark\">\n" +
+            "                    <div class=\"card-header bg-dark border-dark\">博主简介</div>\n" +
+            "                    <div class=\"card-body\">\n" +
+            "                        <p class=\"card-text\">性别男，技术爱好者，目前职位是算法工程师。<br><br>2019.06.04</p>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "                <hr>\n" +
+            "                <div class=\"card text-white-50 bg-dark border-dark\">\n" +
+            "                    <div class=\"card-header bg-dark border-dark\">热门分类</div>\n" +
+            "                    <div class=\"card-body\">\n" +
+            "                        <p class=\"card-text\"><a href=\"#\" class=\"text-white-50\">机器学习</a></p>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "\n" +
+            "                <hr>\n" +
+            "\n" +
+            "                <div class=\"card text-white-50 bg-dark border-dark\">\n" +
+            "                    <div class=\"card-header bg-dark border-dark\">热门标签</div>\n" +
+            "                    <div class=\"card-body\">\n" +
+            "                        <button type=\"button\" class=\"btn btn-primary btn-sm\" style=\"margin-bottom: 5px\">机器学习</button>\n" +
+            "                        <button type=\"button\" class=\"btn btn-secondary btn-sm\" style=\"margin-bottom: 5px\">Tensorflow</button>\n" +
+            "                        <button type=\"button\" class=\"btn btn-success btn-sm\" style=\"margin-bottom: 5px\">Python</button>\n" +
+            "                        <button type=\"button\" class=\"btn btn-danger btn-sm\" style=\"margin-bottom: 5px\">学习笔记</button>\n" +
+            "                        <button type=\"button\" class=\"btn btn-warning btn-sm\" style=\"margin-bottom: 5px\">神经网络</button>\n" +
+            "                        <button type=\"button\" class=\"btn btn-info btn-sm\" style=\"margin-bottom: 5px\">深度学习</button>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "\n" +
+            "                <hr>";
 
     }
 

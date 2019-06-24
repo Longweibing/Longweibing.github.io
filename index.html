@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML-full"></script>
     <link rel="icon" href="asset/images/L.jpg">
 
     <title>博客 |  爱做梦真是太好了</title>
@@ -215,7 +216,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="asset/js/jquery-slim.min.js" ></script>
     <script src="asset/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML-full"></script>
     <script>
         function query(object) {
             let showView = document.getElementById("showView");
@@ -326,12 +326,12 @@
             // 博客列表和其他
             let blogListAndRightMeta = document.getElementById("blogListAndRightMeta");
             blogListAndRightMeta.className = "row";
-            blogListAndRightMeta.innerHTML = " <div class=\"col-sm-8\">\n" +
+            blogListAndRightMeta.innerHTML = "<div class=\"col-sm-8\">\n" +
                 "            <div class=\"card text-white-50 bg-dark border-dark\" >\n" +
                 "                <div class=\"card-header bg-dark border-dark\"><a href=\"blogs/TENSORFLOW学习笔记-1.html\" class=\"text-white\">TENSORFLOW学习笔记-1</a></div>\n" +
                 "                <div class=\"card-body\">\n" +
                 "                    <p class=\"card-text\">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>\n" +
-                "                    <a href=\"blogs/TENSORFLOW学习笔记-1.html\" class=\"btn btn-dark float-md-right text-white-50\">阅读全文</a>\n" +
+                "                    <a href=\"blogs/TENSORFLOW学习笔记-1.html\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
                 "                </div>\n" +
                 "            </div>\n" +
                 "            <hr>\n" +
@@ -340,7 +340,18 @@
                 "                <div class=\"card-header bg-dark border-dark\"><a href=\"blogs/实现数组元素互换位置（乘机理解java参数传递）.html\" class=\"text-white\">实现数组元素互换位置（乘机理解java参数传递）</a></div>\n" +
                 "                <div class=\"card-body\">\n" +
                 "                    <p class=\"card-text\">Java中函数参数是按值传递的，在实现数组元素互换位置之前，我想先说一下Java函数参数传递过程。一般情况下我们会把参数分为基本数据类型和引用数据类型，然后分别来讲参数传递，因为他们的外在表现似乎是不同的，然而，他们的本质都是值传递。在讲值传递时，请务必将“实参的副本”这五个字刻在脑海，因为它是理解值传递的关键。</p>\n" +
-                "                    <a href=\"blogs/实现数组元素互换位置（乘机理解java参数传递）.html\" class=\"btn btn-dark text-white-50 float-md-right\">阅读全文</a>\n" +
+                "                    <a href=\"blogs/实现数组元素互换位置（乘机理解java参数传递）.html\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "<hr>\n" +
+                "\n" +
+                "<div class=\"card text-white-50 bg-dark border-dark\">\n" +
+                "                <div class=\"card-header bg-dark border-dark\"><a href=\"blogs/测试MathJax插件.html\" class=\"text-white\">测试MathJax插件</a></div>\n" +
+                "                <div class=\"card-body\">\n" +
+                "                    <p class=\"card-text\">\n" +
+                "Javascript显示公式的插件" +
+                "</p>\n" +
+                "                    <a href=\"blogs/测试MathJax插件.html\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
                 "                </div>\n" +
                 "            </div>\n" +
                 "\n" +
@@ -349,7 +360,7 @@
                 "                    <li class=\"page-item disabled\">\n" +
                 "                        <a class=\"page-link bg-dark border-dark\" href=\"#\" tabindex=\"-1\">Previous</a>\n" +
                 "                    </li>\n" +
-                "                    <li class=\"page-item active\"><a class=\"page-link bg-dark border-dark\" href=\"#\">1 <span class=\"sr-only\">(current)</span></a></li>\n" +
+                "                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1 <span class=\"sr-only\">(current)</span></a></li>\n" +
                 "                    <li class=\"page-item disabled\">\n" +
                 "                        <a class=\"page-link bg-dark border-dark\" href=\"#\" tabindex=\"-1\">Next</a>\n" +
                 "                    </li>\n" +
@@ -389,7 +400,8 @@
                 "                </div>\n" +
                 "            </div>\n" +
                 "\n" +
-                "            <hr>";
+                "            <hr>\n" +
+                "        </div>";
 
         }
 

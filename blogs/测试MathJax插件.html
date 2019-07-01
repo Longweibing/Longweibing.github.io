@@ -35,6 +35,8 @@
             z-index: 100;
             visibility: hidden;
             background-color: #FFFFFF;
+            padding: 20px;
+            box-shadow: 10px 10px 5px #888888;
         }
 
         a:hover {
@@ -225,8 +227,8 @@
             if (titleAndContent[0].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {  // 博客标题中包含关键字的处理
                 let titleStr = "<a href=\""+ titleAndContent[0] + "\" class=\"text-dark\">" +
                     titleAndContent[0].replace('.html', '').replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</a>";
-                showView.innerHTML = "<div class=\"card text-dark bg-white border-white\">\n" +
-                    "                <div class=\"card-header bg-white border-white\">" + titleStr + "</div>\n" +
+                showView.innerHTML = showView.innerHTML + "<div class=\"card text-dark bg-white border-white\">\n" +
+                    "                <div style='font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0' class=\"card-header bg-white\">" + titleStr + "</div>\n" +
                     "                <div class=\"card-body\">\n" +
                     "                    <p class=\"card-text\">" + titleAndContent[1].split("  ")[0] + "</p>\n" +
                     "                    <a href=\"" + titleAndContent[0] + "\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
@@ -238,8 +240,8 @@
                 for (let i in content) {
                     if (content[i].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {
                         let titleStr = "<a href=\""+ titleAndContent[0] + "\" class=\"text-dark\">" + titleAndContent[0].replace('.html', '') + "</a>";
-                        showView.innerHTML = "<div class=\"card text-dark bg-white border-white\">\n" +
-                            "                <div class=\"card-header bg-white border-white\">" + titleStr + "</div>\n" +
+                        showView.innerHTML = showView.innerHTML + "<div class=\"card text-dark bg-white border-white\">\n" +
+                            "                <div style='font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0' class=\"card-header bg-white\">" + titleStr + "</div>\n" +
                             "                <div class=\"card-body\">\n" +
                             "                    <p class=\"card-text\">" + content[i].replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</p>\n" +
                             "                    <a href=\"" + titleAndContent[0] + "\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
@@ -374,7 +376,7 @@
             if (titleAndContent[0].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {  // 博客标题中包含关键字的处理
                 let titleStr = "<a href=\""+ titleAndContent[0] + "\" class=\"text-white-50\">" +
                     titleAndContent[0].replace('.html', '').replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</a>";
-                showView.innerHTML = "<div class=\"card text-white-50 bg-dark border-dark\">\n" +
+                showView.innerHTML = showView.innerHTML + "<div class=\"card text-white-50 bg-dark border-dark\">\n" +
                     "                <div class=\"card-header bg-dark border-dark\">" + titleStr + "</div>\n" +
                     "                <div class=\"card-body\">\n" +
                     "                    <p class=\"card-text\">" + titleAndContent[1].split("  ")[0] + "</p>\n" +
@@ -387,7 +389,7 @@
                 for (let i in content) {
                     if (content[i].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {
                         let titleStr = "<a href=\""+ titleAndContent[0] + "\" class=\"text-white-50\">" + titleAndContent[0].replace('.html', '') + "</a>";
-                        showView.innerHTML = "<div class=\"card text-white-50 bg-dark border-dark\">\n" +
+                        showView.innerHTML = showView.innerHTML + "<div class=\"card text-white-50 bg-dark border-dark\">\n" +
                             "                <div class=\"card-header bg-dark border-dark\">" + titleStr + "</div>\n" +
                             "                <div class=\"card-body\">\n" +
                             "                    <p class=\"card-text\">" + content[i].replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</p>\n" +

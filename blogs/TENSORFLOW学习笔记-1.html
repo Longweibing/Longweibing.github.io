@@ -39,6 +39,9 @@
         a:hover {
             text-decoration:none;
         }
+        #nav-list-1 a:hover, #nav-list-2 a:hover{
+            color: #0068d7;
+        }
     </style>
 
 	<script>
@@ -65,14 +68,14 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分类</a>
-                    <div class="dropdown-menu border-white" aria-labelledby="dropdown03">
+                    <div id="nav-list-1" class="dropdown-menu border-white" aria-labelledby="dropdown03">
                         <a class="dropdown-item" href="#">机器学习</a>
 
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
-                    <div class="dropdown-menu border-white" aria-labelledby="dropdown03">
+                    <div id="nav-list-2" class="dropdown-menu border-white" aria-labelledby="dropdown03">
                         <a class="dropdown-item" href="#">机器学习</a>
                         <a class="dropdown-item" href="#">Tensorflow</a>
                         <a class="dropdown-item" href="#">Python</a>
@@ -242,16 +245,16 @@ with tf.Session() as sess:
 
             <div id="meta" class="col-sm-4">
                 <!-- 博主简介 -->
-                <div class="card text-dark bg-white border-white">
-                    <div class="card-header bg-white border-white">博主简介</div>
-                    <div class="card-body">
+                <div name="meta" class="card text-dark bg-white border-white">
+                    <div style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0" name="meta" class="card-header bg-white">博主简介</div>
+                    <div name="meta" class="card-body">
                         <p class="card-text">性别男，技术爱好者，目前职位是算法工程师。<br><br>2019.06.04</p>
                     </div>
                 </div>
                 <hr>
-                <div class="card text-dark bg-white border-white">
-                    <div class="card-header bg-white border-white">热门分类</div>
-                    <div class="card-body">
+                <div name="meta" class="card text-dark bg-white border-white">
+                    <div class="card-header bg-white" style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0">热门分类</div>
+                    <div id="nav-list-3" class="card-body">
                         <p class="card-text"><a href="#" class="text-dark">机器学习</a></p>
                     </div>
                 </div>
@@ -259,9 +262,10 @@ with tf.Session() as sess:
                 <hr>
 
                 <div class="card text-dark bg-white border-white">
-                    <div class="card-header bg-white border-white">热门标签</div>
+                    <div class="card-header bg-white" style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0">热门标签</div>
                     <div class="card-body">
-                        <button type="button" class="btn btn-primary btn-sm" style="margin-bottom: 5px">机器学习</button>
+                        <button type="button" class="btn btn-primary btn-sm" style="margin-bottom: 5px">机器学习
+                        </button>
                         <button type="button" class="btn btn-secondary btn-sm" style="margin-bottom: 5px">Tensorflow</button>
                         <button type="button" class="btn btn-success btn-sm" style="margin-bottom: 5px">Python</button>
                         <button type="button" class="btn btn-danger btn-sm" style="margin-bottom: 5px">学习笔记</button>

@@ -19,6 +19,8 @@
     <style>
         body {
             font-family: "Microsoft YaHei";
+            padding: 0;
+            margin: 0;
         }
 
         #showView {
@@ -33,7 +35,26 @@
             visibility: hidden;
             background-color: #FFFFFF;
             padding: 20px;
-            box-shadow: 10px 10px 5px #888888;
+            -webkit-box-shadow: 0px 0px 6px #22221b;
+            -moz-box-shadow: 0px 0px 6px #22221b;
+            box-shadow: 0px 0px 6px #22221b;
+        }
+
+        #today-like {
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 0px 6px #22221b;
+            -moz-box-shadow: 0px 0px 6px #22221b;
+            box-shadow: 0px 0px 6px #22221b;
+        }
+
+
+        #bloglist{
+            /* 设置阴影 */
+            -webkit-box-shadow: 0px 0px 6px #22221b;
+            -moz-box-shadow: 0px 0px 6px #22221b;
+            box-shadow: 0px 0px 6px #22221b;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
 
         a:hover {
@@ -44,7 +65,16 @@
             color: #0068d7;
         }
 
-
+        .foot {
+            background-color: #1b181b;
+            height: 200px;
+            width: 100%;
+            margin-top: 20px;
+            text-align: -moz-center;
+            text-align: -webkit-center;
+            padding-top: 20px;
+            font-size: 10px;
+        }
 
     </style>
 </head>
@@ -74,7 +104,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
+                    <a data-id="label-nav" class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
                     <div id="nav-list-2" class="dropdown-menu border-white" aria-labelledby="dropdown03">
                         <a class="dropdown-item" href="#">机器学习</a>
                         <a class="dropdown-item" href="#">Tensorflow</a>
@@ -106,7 +136,7 @@
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
             </ol>
-            <div class="carousel-inner">
+            <div id="today-like" class="carousel-inner">
                 <div class="carousel-item active">
                     <a href="https://www.coursera.org/learn/algorithms-part1"><img src="asset/images/algorithms-part1.PNG" class="d-block w-100" alt="..."></a>
                     <div class="carousel-caption d-none d-md-block">
@@ -139,8 +169,8 @@
     <hr id="split1" style="border-color: #FFFFFF">
 
     <div id="blogListAndRightMeta" class="row">
-        <div class="col-sm-8">
-            <div class="card text-dark bg-white border-white" >
+        <div id="bloglist" class="col-sm-8">
+            <div id="blog1" class="card text-dark bg-white border-white" >
                 <div style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0" class="card-header bg-white"><a style="font-size: larger" href="blogs/TENSORFLOW学习笔记-1.html" class="text-dark">TENSORFLOW学习笔记-1</a></div>
                 <div class="card-body">
                     <p class="card-text">TENSORFLOW是一种通过计算图构建神经网络、深度学习等模型，并用于实现相关任务的工具。它主要由PYTHON语言实现，内部计算用C++实现，所以它的特点为：简单、高效、稳定。通过使用TENSORFLOW不仅可以实现我们常见的深度学习任务，而且让我们从复杂的实现细节中解放出来，更加关注我们的任务本身，从而节省了宝贵的时间。本文主要是一些TENSORFLOW的学习笔记，供我或者大家参考，具体细节还是看TENSORFLOW官方文档更好。</p>
@@ -149,7 +179,7 @@
             </div>
             <hr>
 
-            <div class="card text-dark bg-white border-white">
+            <div id="blog2" class="card text-dark bg-white border-white">
                 <div style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0" class="card-header bg-white"><a style="font-size: larger" href="blogs/实现数组元素互换位置（乘机理解java参数传递）.html" class="text-dark">实现数组元素互换位置（乘机理解java参数传递）</a></div>
                 <div class="card-body">
                     <p class="card-text">Java中函数参数是按值传递的，在实现数组元素互换位置之前，我想先说一下Java函数参数传递过程。一般情况下我们会把参数分为基本数据类型和引用数据类型，然后分别来讲参数传递，因为他们的外在表现似乎是不同的，然而，他们的本质都是值传递。在讲值传递时，请务必将“实参的副本”这五个字刻在脑海，因为它是理解值传递的关键。</p>
@@ -158,7 +188,7 @@
             </div>
 			<hr>
 
-			<div class="card text-dark bg-white border-white">
+			<div id="blog3" class="card text-dark bg-white border-white">
                 <div style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0" class="card-header bg-white"><a style="font-size: larger" href="blogs/测试MathJax插件.html" class="text-dark">测试MathJax插件</a></div>
                 <div class="card-body">
                     <p class="card-text">
@@ -183,17 +213,17 @@
             </nav>
 
         </div>
-
         <div id="rightMeta" class="col-sm-4">
+            <hr style="border-color: #FFFFFF">
             <!-- 博主简介 -->
-            <div name="meta" class="card text-dark bg-white border-white">
+            <div id="me" name="meta" class="card text-dark bg-white border-white">
                 <div style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0" name="meta" class="card-header bg-white">博主简介</div>
                 <div name="meta" class="card-body">
                     <p class="card-text">性别男，技术爱好者，目前职位是算法工程师。<br><br>2019.06.04</p>
                 </div>
             </div>
             <hr>
-            <div name="meta" class="card text-dark bg-white border-white">
+            <div id="hot-class" name="meta" class="card text-dark bg-white border-white">
                 <div class="card-header bg-white" style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0">热门分类</div>
                 <div id="nav-list-3" class="card-body">
                     <p class="card-text"><a href="#" class="text-dark">机器学习</a></p>
@@ -202,7 +232,7 @@
 
             <hr>
 
-            <div class="card text-dark bg-white border-white">
+            <div id="hot-label" class="card text-dark bg-white border-white">
                 <div class="card-header bg-white" style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0">热门标签</div>
                 <div class="card-body">
                     <button type="button" class="btn btn-primary btn-sm" style="margin-bottom: 5px">机器学习
@@ -215,18 +245,24 @@
                 </div>
             </div>
 
-            <hr>
         </div>
     </div>
+
 </div>
 
-
+</div>
+<div class="foot">
+    <li style="list-style: none; color: #FFFFFF; ">Power by longweibing</li>
+    <li style="list-style: none; color: #FFFFFF; "><a href="https://github.com/Longweibing">Github: https://github.com/Longweibing</a></li>
+    <li style="list-style: none; color: #FFFFFF; "><a href="https://blog.csdn.net/github_37412255">CSDN BLOG: https://blog.csdn.net/github_37412255</a></li>
+    <li style="list-style: none; color: #FFFFFF; ">EMAIL: 591178251@qq.com</li>
 </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="asset/js/jquery-slim.min.js" ></script>
     <script src="asset/js/bootstrap.min.js"></script>
+    <script src="asset/js/bootstrap-hover-dropdown.min.js"></script>
     <script>
         function query(object) {
             let showView = document.getElementById("showView");

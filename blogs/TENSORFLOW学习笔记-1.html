@@ -35,7 +35,22 @@
             visibility: hidden;
             background-color: #FFFFFF;
             padding: 20px;
-            box-shadow: 10px 10px 5px #888888;
+            -webkit-box-shadow: 0px 0px 6px #22221b;
+            -moz-box-shadow: 0px 0px 6px #22221b;
+            box-shadow: 0px 0px 6px #22221b;
+        }
+
+        #today-like {
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 0px 6px #22221b;
+            -moz-box-shadow: 0px 0px 6px #22221b;
+            box-shadow: 0px 0px 6px #22221b;
+        }
+
+        #blogContent {
+            -webkit-box-shadow: 0px 0px 6px #22221b;
+            -moz-box-shadow: 0px 0px 6px #22221b;
+            box-shadow: 0px 0px 6px #22221b;
         }
 
         a:hover {
@@ -43,6 +58,17 @@
         }
         #nav-list-1 a:hover, #nav-list-2 a:hover{
             color: #0068d7;
+        }
+
+        .foot {
+            background-color: #1b181b;
+            height: 200px;
+            width: 100%;
+            margin-top: 20px;
+            text-align: -moz-center;
+            text-align: -webkit-center;
+            padding-top: 20px;
+            font-size: 10px;
         }
     </style>
 
@@ -108,7 +134,7 @@
                     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div id="today-like" class="carousel-inner">
                     <div class="carousel-item active">
                         <a href="https://www.coursera.org/learn/algorithms-part1"><img src="../asset/images/algorithms-part1.PNG" class="d-block w-100" alt="..."></a>
                         <div class="carousel-caption d-none d-md-block">
@@ -248,7 +274,9 @@ with tf.Session() as sess:
 				<!-- City版安装代码已完成 -->
 			</div>
 
+
             <div id="meta" class="col-sm-4">
+                <hr style="border-color: #FFFFFF">
                 <!-- 博主简介 -->
                 <div name="meta" class="card text-dark bg-white border-white">
                     <div style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0" name="meta" class="card-header bg-white">博主简介</div>
@@ -278,12 +306,16 @@ with tf.Session() as sess:
                         <button type="button" class="btn btn-info btn-sm" style="margin-bottom: 5px">深度学习</button>
                     </div>
                 </div>
-
-                <hr>
             </div>
 	    </div>
     </div>
 
+</div>
+<div class="foot">
+    <li style="list-style: none; color: #FFFFFF; ">Power by longweibing</li>
+    <li style="list-style: none; color: #FFFFFF; "><a href="https://github.com/Longweibing">Github: https://github.com/Longweibing</a></li>
+    <li style="list-style: none; color: #FFFFFF; "><a href="https://blog.csdn.net/github_37412255">CSDN BLOG: https://blog.csdn.net/github_37412255</a></li>
+    <li style="list-style: none; color: #FFFFFF; ">EMAIL: 591178251@qq.com</li>
 </div>
 <!-- Bootstrap core JavaScript
     ================================================== -->

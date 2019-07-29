@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>coursera个人主页面</title>
+    <style>
+        body, div, img, a, button, input, p, ul, li {
+            padding: 0; margin: 0;
+        }
+
+        body {
+            overflow: scroll;
+        }
+
+        .nav-pos {
+            position: relative;
+            width: 100%;
+            height: 64px;
+        }
+
+        .nav {
+            position: fixed;
+            height: 64px;
+            line-height: 64px;
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            z-index: 100;
+        }
+
+        .nav-left {
+            position: relative;
+            float: left;
+            padding-left: 24px;
+            height: 65px;
+            width: 245px;
+        }
+
+        .nav-left .nav-icon > img {
+            position: absolute;
+            top: 22px;
+            left: 24px;
+            height: 20px;
+        }
+
+        .nav-left .nav-explore {
+            position: absolute;
+            display: block;
+            /* text-align: center; */
+            width: 92px;
+            height: 36px;
+            line-height: 36px;
+            left: 175px;
+            top: 15px;
+            padding-right: 12px;
+            color: #fff;
+            font-weight: bolder;
+            font-size: 14px;
+            border-width: 0;
+            border-radius: 3px;
+            background-color: #2a73cc;
+            background-image: url('./images/下.svg');
+            background-repeat: no-repeat;
+            background-size: 21px;
+            background-position: 56px 7px;
+            
+        }
+
+        .nav-right {
+            position: relative;
+            float: right;
+            width: 317px;
+            height: 64px;
+            line-height: 64px;
+            background-color: #fff;
+        }
+
+
+        .nav-right a {
+            position: absolute;
+            display: block;
+            width: 65px;
+            height: 65px;
+            line-height: 65px;
+            margin-right: 277px;
+            text-decoration: none;
+            color: #1f1f1f;
+            font-size: 14px;
+        }
+
+        .nav-right .vertical-line {
+            position: absolute;
+            display: inline-block;
+            margin-top: 13px;
+            margin-left: 72px;
+            width: 2px;
+            height: 38px;
+            line-height: 38px;
+            background-color: #e1e1e1;
+        }
+
+        .nav-right .name {
+            position: absolute;
+            width: 106px;
+            height: 42px;
+            line-height: 42px;
+            left: 98px;
+            top: 13px;
+            color: #1f1f1f;
+            font-size: 14px;
+            
+        }
+
+        .name .head-photo {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            background-image: url('./images/head_portrait.jpg');
+            background-repeat: no-repeat;
+        }
+
+        .name .name-text {
+            position: absolute;
+            display: inline-block;
+            width: 60px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 6px;
+            background-image: url('./images/下-right.svg');
+            background-repeat: no-repeat;
+            background-size: 12px;
+            background-position: 48px 15px;
+        }
+
+        .search {
+            position: relative;
+            width: 490px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 307px;
+            margin-top: 13px;
+        }
+
+        .search .search-content {
+            position: absolute;
+            display: line-block;
+            width: 450px;
+            height: 38px;
+            line-height: 38px;
+            border: 1px solid #e0e0e0;
+            border-radius: 2px 0 0 2px;
+            text-indent: 10px;
+            font-family:  "Microsoft YaHei";
+            font-weight: 300;
+            font-size: 16px;
+
+        }
+
+        .search .serach-button {
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height: 40x;
+            left: 450px;
+            background-color: #2a73cc;
+            border: 0;
+            border-radius: 0 2px 2px 0;
+            background-image: url('./images/搜索.svg');
+            background-repeat: no-repeat;
+            background-position: 8px 11px;
+            background-size: 20px;
+        }
+
+        .search input::-webkit-input-placeholder {
+            color: #afb1af;
+        }
+        .search input::-moz-placeholder {
+            color: #afb1af;
+        }
+
+        .search input:focus{ 
+            outline:none;
+            color: rgb(129, 125, 125);
+        }
+
+        .version, .name {
+            color: #b93939;
+        }
+
+
+        /* 下面为"主要内容"布局 */
+        .main-content {
+            width: 945px;
+            height: 1360px;
+            margin: 41px auto;
+            background-color: #fff;
+        }
+
+        .main-content .main-left {
+            float: left;
+            width: 213px;
+            height: 348px;
+            background-color: #f1f1f1;
+        }
+
+        .main-left a.main-list {
+            display: block;
+            width: 192px;
+            height: 51px;
+            line-height: 51px;
+            padding-left: 20px;
+            color: #1f1f1f;
+        }
+
+        .main-left a.course-list {
+            display: block;
+            width: 172px;
+            height: 45px;
+            line-height: 45px;
+            padding-left: 40px;
+            color: #4d4d4d;
+        }
+
+        a.main-list, a.course-list {
+            text-decoration: none;
+            font-size: 14px;
+            border-left: 1px solid #d0d0d0;
+            border-right: 1px solid #d0d0d0;
+            border-bottom: 1px solid #d0d0d0;
+            font-family: "Microsoft YaHei";
+        }
+
+        a.course {
+            border-top: 1px solid #d0d0d0;
+        }
+
+        a.bg-color {
+            background-color: #fff;
+            
+        }
+
+        #last-active {
+            color: #000;
+        }
+
+        a.a-hover:hover {
+            background-color: #f8f7f7;
+        }
+
+        #new {
+            background: url('./images/序号1.svg') no-repeat 169px 13px;
+            background-size: 25px;
+        }
+
+        /* 右边布局编辑 */
+        .main-right {
+            float: left;
+            width: 701px;
+            height: 974px;
+            margin-left: 31px;
+            /* background-color: #000; */
+        }
+
+        .main-right .right-sign-up {
+            position: relative;
+            width: 701px;
+            height: 238px;
+            background-color: #fff;
+            /* background-image: url('./images/main_right.jpg'); */
+            background: url('./images/main_right.jpg') no-repeat;
+        }
+
+        @font-face{
+            font-family: 'OpenSans-light'; 
+            src: url('./fonts/OpenSans-Light.ttf') format('truetype')
+        }
+        @font-face{
+            font-family: 'OpenSans'; 
+            src: url('./fonts/OpenSans-Regular.ttf') format('truetype')
+        }
+        
+        .right-sign-up .Webinar {
+            top: 55px;
+            left: 260px;
+            text-decoration: none;
+            color: #fff;
+            font: normal 21px/24px OpenSans-light, Arial, sans-serif;
+            font-weight: 600;
+        }
+
+        .right-sign-up a.Webinar:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+
+        .right-sign-up a {
+            position: absolute;
+            display: block;
+        }
+        .right-sign-up .Join-us {
+            position: absolute;
+            left: 172px;
+            top: 91px;
+            width: 357px;
+            height: 45px;
+            line-height: 15px;
+            text-align: center;
+            font-family: OpenSans;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        .right-sign-up .sign-up {
+            top: 156px;
+            left: 308px;
+            width: 85px;
+            height: 46px;
+            line-height: 46px;
+            background-color: #2073d4;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-family: OpenSans;
+        }
+
+        .right-sign-up .sign-up:hover {
+            background-color: rgb(0, 91, 190);
+         }
+
+         .text1 {
+             padding-top: 40px;
+             font: 24px/30px "Microsoft YaHei";
+             color: rgba(0, 0, 0, 0.55);
+         }
+
+         .text2 {
+            padding-top: 9px;
+            font: 12px/18px "Microsoft YaHei";
+            color: rgb(82, 82, 82);
+         }
+
+         /* 第一门课程 */
+
+         .Design-Patterns {
+             /* position: relative; */
+             margin-top: 17px;
+             width: 699px;
+             height: 154px;
+             border: 1px solid #e5e5e5;
+         }
+
+         .Design-Patterns:hover {
+             border: 1px solid rgb(192, 190, 190);
+             transition-delay: 0.2s;
+         }
+
+         .Design-Patterns .dp-left {
+            display: block;
+            width: 75px;
+            height: 52px;
+            float: left;
+            background: url('./images/SDA-Courseralogos-C2-option1.png') no-repeat -2px -13px;
+            border-width: 0;
+
+            margin-top: 50px;
+            margin-left: 30px;
+         }
+
+         .Design-Patterns .dp-right {
+            position: relative;
+            display: block;
+            width: 118px;
+            height: 154px;
+            float: right;
+
+         }
+
+         .dp-right .dp-right-dot {
+             display: block;
+             position: absolute;
+             width: 14px;
+             height: 26px;
+             background: url('./images/省略号.png') no-repeat;
+             background-size: 11px;
+             left: 99px;
+             top: 8px;
+             border-width: 0;
+         }
+
+         .dp-right .dp-right-incourse {
+             display: block;
+             position: absolute;
+             width: 88px;
+             height: 34px;
+             line-height: 32px;
+             text-align: center;
+             top: 45px;
+             font-size: 12px;
+             text-decoration: none;
+             color: #6f6f6f;
+             border: 1px solid #6f6f6f;
+             font-family: "Microsoft YaHei"
+         }
+
+         .dp-right .dp-right-incourse:hover {
+             background-color: #8c8c8c;
+             border: 1px solid #8c8c8c;
+             color: #fff;
+             transition: 0.1s;
+         }
+
+         .dp-right .dp-right-getbook {
+             display: block;
+             position: absolute;
+             width: 48px;
+             height: 40px;
+             top: 90px;
+             left: 21px;
+             font-size: 12px;
+             text-decoration: none;
+             color: #2972d1;
+             text-align: center;
+             font-family: "Microsoft YaHei"
+         }
+
+         .dp-right .dp-right-getbook:hover {
+             text-decoration: underline;
+         }
+
+         .Design-Patterns .dp-link-center {
+            position: relative;
+            height: 154px;
+            width: 447px;
+            margin-left: 126px;
+         }
+
+         .Design-Patterns .dp-link-center:hover {
+             cursor: pointer;
+         }
+
+         .Design-Patterns .dp-link-name {
+            display: block;
+            position: absolute;
+            text-decoration: none;
+            top: 21px;
+            color: #373a3c;
+            font: normal 16px/24px OpenSans;
+         }
+
+         .Design-Patterns .dp-link-univer {
+            display: block;
+            position: absolute;
+            text-decoration: none;
+            top: 53px;
+            color: #373a3c;
+            font: normal 16px/24px 'OpenSans';
+         }
+
+         .Design-Patterns .dp-link-time {
+            display: block;
+            position: absolute;
+            text-decoration: none;
+            top: 90px;
+            color: #373a3c;
+            font: normal 12px/18px 'OpenSans';
+         }
+
+         .Design-Patterns .dp-link-ranking {
+             display: block;
+             position: absolute;
+             top: 115px;
+             background: url('./images/五角星.svg') repeat-x 0 0;
+             background-size: 18px;
+             width: 91px;
+             height: 18px;
+             border-width: 0;
+
+         }
+
+         /* 第二门课程 */
+
+         .Algorithms-Part-II {
+             /* position: relative; */
+             margin-top: 20px;
+             width: 699px;
+             height: 385px;
+             border: 1px solid #e5e5e5;
+         }
+
+         .Algorithms-Part-II:hover {
+             border: 1px solid rgb(192, 190, 190);
+             transition-delay: 0.2s;
+         }
+
+         .Algorithms-Part-II .dp-left {
+            display: block;
+            width: 80px;
+            height: 80px;
+            float: left;
+            background: url('./images/algs4partI-logo.jpg') no-repeat 0 0;
+            border-width: 0;
+
+            margin-top: 37px;
+            margin-left: 28px;
+         }
+
+         .Algorithms-Part-II .dp-right {
+            position: relative;
+            display: block;
+            width: 118px;
+            height: 154px;
+            float: right;
+
+         }
+
+         .dp-right .dp-right-dot {
+             display: block;
+             position: absolute;
+             width: 14px;
+             height: 26px;
+             background: url('./images/省略号.png') no-repeat;
+             background-size: 11px;
+             left: 99px;
+             top: 8px;
+             border-width: 0;
+         }
+
+
+         .Algorithms-Part-II .dp-link-center {
+            position: relative;
+            height: 154px;
+            width: 447px;
+            margin-left: 126px;
+         }
+
+         .Algorithms-Part-II .dp-link-center:hover {
+             cursor: pointer;
+         }
+
+         .Algorithms-Part-II .dp-link-name {
+            display: block;
+            position: absolute;
+            text-decoration: none;
+            top: 21px;
+            color: #373a3c;
+            font: normal 16px/24px OpenSans;
+         }
+
+         .Algorithms-Part-II .dp-link-univer {
+            display: block;
+            position: absolute;
+            text-decoration: none;
+            top: 53px;
+            color: #373a3c;
+            font: normal 16px/24px 'OpenSans';
+         }
+
+         .Algorithms-Part-II .dp-link-time {
+            display: block;
+            position: absolute;
+            text-decoration: none;
+            top: 90px;
+            color: #373a3c;
+            font: normal 12px/18px 'OpenSans';
+         }
+
+         .Algorithms-Part-II .dp-link-ranking {
+             display: block;
+             position: absolute;
+             top: 115px;
+             background: url('./images/五角星.svg') repeat-x 0 0;
+             background-size: 18px;
+             width: 91px;
+             height: 18px;
+             border-width: 0;
+
+         }
+
+         .Algorithms-Part-II .last-content {
+             position: relative;
+             width: 641px;
+             height: 173px;
+             margin: 0 auto;
+             margin-top: 22px;
+         }
+
+         .last-content .last-content-top {
+             width: 611px;
+             height: 42px;
+             background-color: #666666;
+             color: #fff;
+             font: bolder 12px/41px "Microsoft YaHei";
+             padding-left: 30px;
+             margin-top: -1px;
+             
+         }
+
+         .last-content .last-content-bottom {
+            width: 640px;
+            height: 131px;
+
+            border: 1px solid #e5e5e5;
+
+         }
+
+         .last-content .last-content-left {
+             float: left;
+             position: relative;
+             width: 425px;
+             height: 131px;
+             left: 29px;         
+             
+         }
+
+         .last-content-left .left1 {
+             position: absolute;
+             top: 29px;
+             font: 14px/21px "Microsoft YaHei";
+             font-weight: 700;
+             color: #373a3c;
+         }
+
+         .last-content-left .left2 {
+             position: absolute;
+             top: 56px;
+             font: 14px/21px "Microsoft YaHei";
+             font-weight: 400;
+             color: #373a3c;
+         }
+
+         .last-content .last-content-right {
+             float: right;
+             width: 136px;
+             height: 34px;
+             line-height: 34px;
+             background-color: #2a73cc;
+             text-align: center;
+             margin-right: 30px;
+             margin-top: 29px;
+             padding-bottom: 2px;
+             
+         }
+
+         .last-content .last-content-right .last-time {
+             text-decoration: none;
+             color: #666;
+             width: 137px;
+             height: 36px;
+             font: bold 12.8px/16px "OpenSans";
+             background-color: #2a73cc;
+             color: #fff;
+             
+         }
+         
+         .last-content .last-content-right:hover, .last-content .last-content-right:hover a {
+             cursor: pointer;
+             background-color: rgb(0, 91, 190);
+             transition: 0.3s;
+         }
+
+         div.line {
+             width: 699px;
+             
+             border: 0.5px solid #e1e1e1;
+             margin-top: 61px;
+             font-weight: 400;
+         }
+
+         .lately-course {
+             color: #646464;
+             font: 22px/24px "Microsoft YaHei";
+             margin-top: 64px;
+             width: 157px;
+             height: 21px;
+         }
+
+         .look-course {
+             position: relative;
+             width: 701px;
+             height: 281px;
+             margin-top: 16px;
+             padding-bottom: 10px;
+             border: 1px solid #e1e1e1;
+         }
+
+         .look-course .course {
+             position: absolute;
+             width: 201px;
+             height: 170px;
+             left: 26px;
+             top: 40px;
+         }
+
+         .look-course-1 {
+             position: absolute;
+             width: 200px;
+             height: 112px;
+             border: 1px solid #e1e1e1;
+             /* margin-top: 16px; */
+             background: url('./images/large-icon.jpg') no-repeat 0 0;
+             background-size: contain;
+         }
+
+         .look-course-2 {
+             position: absolute;
+             width: 64px;
+             height: 18px;
+             top: 125px;
+             font: 16px/19.2px "Microsoft YaHei";
+             color: #4d4d4d;
+         }
+
+         .look-course-3 {
+             position: absolute;
+             width: 145px;
+             height: 20px;
+             top: 148px;
+             font: 16px/24px OpenSans, -apple-system, BlinkMacSystemFont, 
+                "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+             color: #646464;
+         }
+
+         
+
+         .look-course .course:hover {
+             cursor: pointer;
+         }
+
+         .look-course .course:hover .look-course-1 {
+             cursor: pointer;
+         }
+
+         /* 页脚 */
+         .foot {
+             position: relative;
+             width: 980px;
+             height: 410px;
+             border-top: 1px solid #e1e1e1;
+             /* clear: both; */
+             margin: 0 auto;
+             top: 50px;
+             /* overflow: hidden; */
+             
+
+         }
+
+         .foot .foot-left {
+             float: left;
+             position: relative;
+             width: 400px;
+             height: 231px;
+             overflow: hidden;
+         }
+
+         .foot-left .logo{
+            position: absolute;
+            text-decoration: none;
+
+            display: block;
+            width: 108px;
+            height: 18px;
+            overflow: hidden;
+            /* background-color: #000; */
+            background: url('./images/gray_coursera.svg') no-repeat 0 0;
+            /* 图像填充到父容器 */
+            background-size: contain;
+            top: 16px;
+            left: 24px;
+         }
+
+         .foot-left .info {
+             position: absolute;
+             width: 362px;
+             top: 57px;
+             left: 24px;
+             color: #373a3c;
+             font: 16px/24px OpenSans, -apple-system, BlinkMacSystemFont, 
+                "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+         }
+
+         .foot-left .version {
+             position: absolute;
+             width: 206px;
+             top: 123px;
+             left: 24px;
+
+             color: #373a3c;
+             font: 400 12px/18px OpenSans, -apple-system, BlinkMacSystemFont, 
+                "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+         }
+
+
+         .foot-left .download-left {
+             position: absolute;
+             left: 24px;
+             width: 151px;
+             height: 45px;
+             top: 165px;
+             background: url('./images/download_on_the_app_store_badge_zh-cn.svg') no-repeat 0 0;
+             background-size: contain;
+         }
+
+         .foot-left .download-right {
+             position: absolute;
+             left: 193px;
+             width: 151px;
+             height: 45px;
+             top: 165px;
+             background: url('./images/zh-cn_generic_rgb_wo_45.png') no-repeat 0 0;
+             background-size: contain;
+         }
+
+         .foot .foot-right {
+             float: left;
+             position: relative;
+             width: 495px;
+             height: 383px;
+             /* background-color: #000; */
+             /* right: 63px; */
+             left: 22px;
+             top: 11px;
+             /* overflow: hidden; */
+             /* margin-bottom: 46px; */
+             /* padding-top: 31px; */
+         }
+         .foot-right ul {
+             /* display: block; */
+             position: absolute;
+             list-style: none;
+
+         }
+
+         .foot-right ul a {
+             text-decoration: none;
+             color: #757575;
+             font: 16px/24px OpenSans, "Microsoft YaHei";
+         }
+
+         .foot-right .min-title {
+             color: #1f1f1f;
+             font: 14px/21px "OpenSans";
+         }
+
+         .foot-right ul li {
+             padding-bottom: 12px;
+         }
+         
+         ul.list1 {
+            left: 0;
+            width: 105px;
+            height: 300px;
+         }
+
+         ul.list2 {
+             left: 140px;
+         }
+
+         ul.list3 {
+             left: 279.5px;
+         }
+
+         ul.list4 {
+             left: 418.5px;
+         }
+
+         /* 响应式导航类 */
+         @media screen and (max-width: 1200px){
+            .search .search-content {
+                /* display: none; */
+                width: 350px;
+            }
+
+            .search .serach-button {
+                left: 350px;
+            }
+        }
+
+        @media screen and (max-width: 1050px){
+            .search .search-content {
+                display: none;
+            }
+
+            .search .serach-button {
+                display: none;
+            }
+
+        }
+
+        @media screen and (max-width: 960px){
+
+            .main-content {
+                width: 705px;
+                height: 1700px;
+            }
+
+            /* 主要内容左边栏缩放响应式 */
+            .main-left {
+                float: unset;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .main-left a.main-list {
+                width: 682px;
+                background-color: #f1f1f1;
+            }
+            .main-left .no-active, .main-left .complete, .main-left #new {
+                width: 682px;
+                background-color: #f1f1f1;
+            }
+            .main-left a.course-list {
+                width: 662px;
+                
+            }
+
+            .main-right {
+                float: unset;
+                clear: both;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .foot {
+                width: auto;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            /* .search .search-content {
+                display: none;
+            }
+
+            .search .serach-button {
+                display: none;
+            }
+
+            .nav-left {
+                display: none;
+            }
+
+            .nav-right {
+                display: none;
+            }
+
+            .nav::before {
+                content: "";
+                width: 200px;
+                height: 65px;
+                background-image: url('./images/搜索.svg');
+            }
+
+            .main-right {
+                display: none;
+            }
+
+            .main-left, .main-left a.main-list, .main-left a.course-list {
+                width: 960px;
+                background-color: #000;
+            }
+
+            .foot {
+                margin: 0 auto;
+                width: 100%;
+            } */
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav-pos">
+        <div class="nav">
+            <div class="nav-left">
+                <a class="nav-icon" href="https://www.coursera.org/"><img src="./images/下载.svg" alt=""></a>
+                <button class="nav-explore">探索</button>
+            </div>
+        
+            <div class="nav-right">
+                <a href="#" class="version">企业版</a>
+                <div class="vertical-line"></div>
+                <div class="name">
+                    <a class="name-a" href="#"><i class="head-photo"></i> <span class="name-text">龙卫兵</span></a>
+                </div>
+        
+            </div>
+        
+            <div class="search">
+                <input type="text" class="search-content" placeholder="您想学习什么？" />
+                <button class="serach-button"></button>
+            </div>
+        
+        
+        </div>
+    </div>
+    
+
+   <div class="main-content">
+       <div class="main-left">
+            <a class="main-list course">我的课程</a>
+
+            <a href="#" class="course-list bg-color" id="last-active">最后激活</a>
+            <a href="#" class="course-list a-hover no-active">未激活</a>
+            <a href="#" class="course-list a-hover complete">已完成</a>
+
+            <a href="#" class="main-list new" id="new">更新</a>
+            <a href="#" class="main-list">成就</a>          
+            <a href="#" class="main-list">建议</a>
+       </div>
+
+        <div class="main-right">
+            <div class="right-sign-up">
+                <a href="#" class="Webinar">Upcoming Webinar</a>
+                <div class="Join-us">Join us in our next webinar for the MSc in Innovation & Entrepreneurship: 14 tips to inventing        or re-inventing your
+                     business model. Date: July 24.
+                </div>
+                <a href="#" class="sign-up">Sign Up</a>
+            </div>
+
+            <div class="text1">最后激活</div>
+            <div class="text2">课程按您最后的活动排序。</div>
+
+            <div class="Design-Patterns">
+                <a class="dp-left" href="#"></a>
+
+                <div class="dp-right">
+                    <a href="#" class="dp-right-dot"></a>
+                    <a href="#" class="dp-right-incourse">进入课程</a>
+                    <a href="#" class="dp-right-getbook">获得证书</a>
+                </div>
+                
+                <div class="dp-link-center">
+                    <a href="#" class="dp-link-name">Design Patterns</a>
+                    <a href="#" class="dp-link-univer">University of Alberta</a>
+                    <a href="#" class="dp-link-time">结束日 Aug 12</a>
+                    <button class="dp-link-ranking"></button>
+                </div>
+                
+            </div>
+
+            <div class="Algorithms-Part-II">
+                <a class="dp-left" href="#"></a>
+                
+                <div class="dp-right">
+                    <a href="#" class="dp-right-dot"></a>
+                </div>
+                
+                <div class="dp-link-center">
+                    <a href="#" class="dp-link-name">Algorithms, Part II</a>
+                    <a href="#" class="dp-link-univer">Princeton University</a>
+                    <a href="#" class="dp-link-time">结束日 Aug 13</a>
+                    <button class="dp-link-ranking"></button>
+                </div>
+
+                <div class="last-content">
+                    <div class="last-content-top">继续</div>
+                    <div class="last-content-bottom">
+                        <div class="last-content-left">
+                            <div class="left1">继续学习剩余内容</div>
+                            <div class="left2">不要让您学到的重要内容消失！每周重置您的截止日期并完成 您的作业。</div>
+                        </div>
+                        <div class="last-content-right">
+                            <a href="#" class="last-time">重置我的截止日期</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="lately-course">最近浏览的课程</div>
+            <div class="look-course">
+                <div class="course">
+                    <div class="look-course-1"></div>
+                    <div class="look-course-2">机器学习</div>
+                    <div class="look-course-3">Stanford University</div>
+                </div>
+                
+            </div>
+        </div>
+
+        
+   </div>
+
+   <div class="foot">
+        <div class="foot-left">
+            <a class="logo" href=""></a>
+            <div class="info">Coursera 致力于普及全世界最好的教育，它与全球一流大学和机构合作提供在线课程。</div>
+            <div class="version">© 2019 Coursera Inc. 保留所有权利。</div>
+            <a href="#" class="download-left"></a><a href="#" class="download-right"></a>
+        </div>
+        <div class="foot-right">
+            <ul class="list1">
+                
+                <li><a href="#" class="min-title">COURSERA</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">管理团队</a></li>
+                <li><a href="#">工作机会</a></li>
+                <li><a href="#">目录</a></li>
+                <li><a href="#">证书</a></li>
+                <li><a href="#" class="mt">MasterTrack™ 证书</a></li>
+                <li><a href="#">学位</a></li>
+                <li><a href="#">企业版</a></li>
+                <li><a href="#">政府版</a></li>
+            </ul>
+
+            <ul class="list2">
+                <li><a href="#" class="min-title">社区</a></li>
+                <li><a href="#">Learners</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Developers</a></li>
+                <li><a href="#">Beta Testers</a></li>
+                <li><a href="#">Translators</a></li>
+
+            </ul>
+
+            <ul class="list3">
+                <li><a href="#" class="min-title">连接</a></li>
+                <li><a href="#">博客</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">领英</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">技术博客</a></li>
+            </ul>
+
+            <ul class="list4">
+                <li><a href="#" class="min-title">更多</a></li>
+                <li><a href="#">条款</a></li>
+                <li><a href="#">隐私</a></li>
+                <li><a href="#">帮助</a></li>
+                <li><a href="#">内容访问</a></li>
+                <li><a href="#">媒体</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">目录</a></li>
+                <li><a href="#">附属公司</a></li>
+            </ul>
+        </div>
+   </div>
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面布局1</title>
+
+    <style>
+        body, div {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        div {
+            border: 1px solid blue;
+
+        }
+
+        .head-nav {
+            width: 960px;
+            height: 200px;
+            margin: 0px auto;
+        }
+
+        .main {
+            width: 960px;
+            margin: 0 auto;
+            /* 防止父容器高度塌陷 */
+            overflow: hidden;
+        }
+
+        .left {
+            width: 300px;
+            float: left;
+            height: 300px;
+        }
+
+        .right {
+            float: right;
+            width: 656px;
+            height: 300px;
+        }
+
+        .foot {
+            clear: both;
+            width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="head-nav">顶部</div>
+    <div class="main">
+        <div class="left">左侧</div>
+        <div class="right">右侧</div>
+    </div>
+    
+    <div class="foot">底部</div>
+</body>
+</html>

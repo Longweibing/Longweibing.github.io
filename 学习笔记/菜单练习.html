@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>菜单练习</title>
+
+    <style>
+        body, div, ul, li {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,li {
+            list-style: none;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: #2e2e2e;
+            font-size: 12px;
+        }
+
+        .nav {
+            position: relative;
+            height: 35px;
+            line-height: 35px;
+        }
+
+        .nav > li {
+            float: left;
+            width: 60px;
+            height: 35px;
+            text-align: center;
+            border-top: 1px solid transparent;
+        }
+
+        .nav > li:hover, .nav > li:hover > a {
+            background-color: #858383;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .nav > li:hover {
+            border-top: 1px solid #f3d;
+        }
+
+        .weibo-box {
+            display: none;
+            position: absolute;
+            padding-left: 15px;
+            background-color: gold;
+            margin-top: 10px;
+            border: 1px solid #f3d;
+        }
+
+
+        /*动画效果*/
+        @keyframes fadeIn {
+            0% {
+            opacity: 0; /*初始状态 透明度为0*/
+            }
+            20%{
+                opacity: .2;
+            }
+            50% {
+                opacity: .5; /*中间状态 透明度为0.5*/
+            }
+            70%{
+                opacity: .7;
+            }
+            100% {
+                opacity: 1; /*结尾状态 透明度为1*/
+            }
+        }
+
+        .weibo:hover .weibo-box {
+            display: block;
+            /*调用动画效果*/
+            animation-name: fadeIn; /*动画名称*/
+            animation-duration: 0.5s; /*动画持续时间*/
+            animation-iteration-count: 1; /*动画次数*/
+            animation-delay: 0s; /*延迟时间*/
+            
+        }
+
+        .weibo-box > li:hover, .weibo-box > li:hover > a {
+            background-color: #858383;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .weibo-box li {
+            width: 60px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            margin-left: -15px;
+        }
+
+        .weibo-box::before {
+            content: "";
+            position: absolute;
+            border: 5px solid red;
+            border-color: transparent transparent #f3d;
+            left: 40%;
+            top: -11px;
+        }
+
+        .weibo-box::after {
+            content: "";
+            position: absolute;
+            border: 5px solid red;
+            border-color: transparent transparent #fff;
+            left: 40%;
+            top: -10.5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="#">登录</a></li>
+        <li class="weibo">
+            <a href="#">微博</a>
+            <ul class="weibo-box">
+                <li><a href="#">私信</a></li>
+                <li><a href="#">评论</a></li>
+                <li><a href="#">@我</a></li>
+            </ul>
+        </li>
+        <li><a href="#">博客</a></li>
+        <li><a href="#">网站导航</a></li>
+    </ul>
+
+</body>
+</html>

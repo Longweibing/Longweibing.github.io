@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>四栏布局</title>
+
+    <style>
+        body,
+        div {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            border: 1px solid saddlebrown;
+        }
+
+        .head {
+            width: 600px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .main {
+            width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .left {
+            float: left;
+            width: 150px;
+        }
+
+        .right {
+            float: right;
+            width: 200px;
+        }
+
+        .right2 {
+            float: right;
+            width: 100px;
+        }
+
+        .foot {
+            width: 600px;
+            height: 100px;
+            margin: 0 auto;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">head</div>
+    <div class="main">
+        <div class="left">left</div>
+
+        <div class="right">right</div>
+        <div class="right2">right2</div>
+        <div class="center">center</div>
+    </div>
+
+    <div class="foot">foot</div>
+</body>
+
+</html>

@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="stylesheet" href="../asset/css/styles/darkula.css"/>
+	<script src="../asset/js/highlight.pack.js"></script>
+
+	<link rel="icon" href="../asset/images/L.jpg">
+
+	<title>实现数组元素互换位置（乘机理解java参数传递） | 爱做梦真是太好了</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="../asset/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="../asset/css/navbar-top-fixed.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Microsoft YaHei";
+        }
+
+        #showView {
+            position: fixed;
+            height: 60%;
+            width: 60%;
+            top: 20%;
+            left: 20%;
+            text-justify: auto;
+            overflow: auto;
+            z-index: 100;
+            visibility: hidden;
+            background-color: #FFFFFF;
+            padding: 20px;
+            -webkit-box-shadow: 0px 0px 6px #22221b;
+            -moz-box-shadow: 0px 0px 6px #22221b;
+            box-shadow: 0px 0px 6px #22221b;
+        }
+
+        #blogContent {
+            -webkit-box-shadow: 0px 0px 6px #22221b;
+            -moz-box-shadow: 0px 0px 6px #22221b;
+            box-shadow: 0px 0px 6px #22221b;
+        }
+
+        a:hover {
+            text-decoration:none;
+        }
+
+        #nav-list-1 a:hover, #nav-list-2 a:hover{
+            color: #0068d7;
+        }
+
+        #today-like {
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 0px 6px #22221b;
+            -moz-box-shadow: 0px 0px 6px #22221b;
+            box-shadow: 0px 0px 6px #22221b;
+        }
+
+        .foot {
+            background-color: #1b181b;
+            height: 200px;
+            width: 100%;
+            margin-top: 20px;
+            text-align: -moz-center;
+            text-align: -webkit-center;
+            padding-top: 50px;
+            font-size: 10px;
+        }
+    </style>
+
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
+</head>
+
+<body style="background-color: #FFFFFF">
+<div class="container-fluid">
+
+    <!-- 搜索界面 -->
+    <div id="showView">
+    </div>
+
+    <nav id="nav" class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+        <img src="../asset/images/L.jpg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">主页</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分类</a>
+                    <div id="nav-list-1" class="dropdown-menu border-white" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="#">机器学习</a>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
+                    <div id="nav-list-2" class="dropdown-menu border-white" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="#">机器学习</a>
+                        <a class="dropdown-item" href="#">Tensorflow</a>
+                        <a class="dropdown-item" href="#">Python</a>
+                        <a class="dropdown-item" href="#">学习笔记</a>
+                        <a class="dropdown-item" href="#">神经网络</a>
+                        <a class="dropdown-item" href="#">深度学习</a>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">时间轴</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="changeDark()">夜间模式</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2 border-white" type="text" placeholder="Search" aria-label="Search" id="inputSearch" oninput="query(this)">
+            </form>
+        </div>
+    </nav>
+
+	<div class="container">
+        <!-- 今日推荐 -->
+        <div class="bd-example">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                </ol>
+                <div id="today-like" class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="https://www.coursera.org/learn/algorithms-part1"><img src="../asset/images/algorithms-part1.PNG" class="d-block w-100" alt="..."></a>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5><a href="https://www.coursera.org/learn/algorithms-part1">Algorithms, Part I</a></h5>
+                            <p class="text-success">
+                                算法（第四版）是Courser网站中广受好评的有关算法编程的课程，因此我推荐给大家。通过这门课程，能使你的编程动手能力大大提高，也是你进一步掌握Java语言。这门课程的亮点包括：免费、五个富有挑战的编程题、视频讲解清楚易懂，因此希望大家学习！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://blog.csdn.net/github_37412255/article/details/54731005"><img src="../asset/images/ranking.jpg" style="height: 428px; width: auto" class="d-block w-100" alt="..."></a>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5><a href="https://blog.csdn.net/github_37412255/article/details/54731005">排序算法实现</a></h5>
+                            <p class="text-danger">
+                                对八种基本排序进行了简单实现，方便读者理解。学习算法不仅要理解算法原理，而且更应该自己动手实现一下，这样理解更加深刻。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <hr id="split1" style="border-color: #FFFFFF">
+
+		<div class="row">
+			<div id="blogContent" class="col-sm-8 bg-white">
+				<h2 style="margin-top: 2rem">实现数组元素互换位置（乘机理解java参数传递）</h2>
+				<hr>
+				<p class="text-justify">Java中函数参数是按值传递的，在实现数组元素互换位置之前，我想先说一下Java函数参数传递过程。一般情况下我们会把参数分为基本数据类型和引用数据类型，然后分别来讲参数传递，因为他们的外在表现似乎是不同的，然而，他们的本质都是值传递。在讲值传递时，请务必将“实参的副本”这五个字刻在脑海，因为它是理解值传递的关键。
+				</p>
+
+					<pre><code class="java">
+// 例子1
+int a = 0;
+void value(int x) {
+    x = 1;
+}
+value(a);
+System.out.println(a); // 结果是 0
+
+// 例子2
+StringBuilder a = new StringBuilder("iphone");
+void value(StringBuilder str) {
+    str.append("7");
+}
+value(a);
+System.out.println(a.toString()); // 结果是 iphone7
+
+								</code></pre>
+					<p class="text-justify">从上面的结果可以看到，第一个例子值没有变，因为只是给a的副本赋新值，a的值没有变化。
+                    </p>
+                    <p class="text-justify">第二个例子a是引用，a的副本和a指向同一块内存地址，所以调用函数是内存地址中的值发生了变化，所以a所指向的内存地址中的值发生了变化。我们那个打印函数打印的是a所指向的内存地址中的值，而不是a本身，a本身还是不变的。
+                    </p>
+                    <p class="text-justify">下面是实现数组元素互换的代码，我们自己试着理解一下：
+                    </p>
+                <pre><code class="java">
+// 交换两个元素
+private void exchange(int[] nums, int x, int y) {
+    int temp = nums[x];
+    nums[x] = nums[y];
+    nums[y] = temp;
+}
+                </code></pre>
+
+                <p class="text-justify">这里调用函数时，具体操作的是nums，x和y的副本，但是由于nums副本和nums都指向同一块地址，所以当函数内部对副本所指向的内存中的值进行操作时，nums所指向的内存中的值也是变化的，而nums这个引用本身是不变的。也就是说，nums中的值（内存地址，如0x0029）不变。
+                </p>
+
+				<hr>
+                <p class="card-text"><small class="text-muted">更新于2019年六月十号</small></p>
+
+				<!-- 来必力City版安装代码 -->
+				<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyNS84NTg5" style="background-color: #FFFFFF">
+					<script type="text/javascript">
+						(function(d, s) {
+							var j, e = d.getElementsByTagName(s)[0];
+
+							if (typeof LivereTower === 'function') { return; }
+
+							j = d.createElement(s);
+							j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+							j.async = true;
+
+							e.parentNode.insertBefore(j, e);
+						})(document, 'script');
+					</script>
+					<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+				</div>
+				<!-- City版安装代码已完成 -->
+			</div>
+
+            <div id="meta" class="col-sm-4">
+                <hr style="border-color: #FFFFFF">
+                <!-- 博主简介 -->
+                <div name="meta" class="card text-dark bg-white border-white">
+                    <div style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0" name="meta" class="card-header bg-white">博主简介</div>
+                    <div name="meta" class="card-body">
+                        <p class="card-text">性别男，技术爱好者，目前职位是算法工程师。<br><br>2019.06.04</p>
+                    </div>
+                </div>
+                <hr>
+                <div name="meta" class="card text-dark bg-white border-white">
+                    <div class="card-header bg-white" style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0">热门分类</div>
+                    <div id="nav-list-3" class="card-body">
+                        <p class="card-text"><a href="#" class="text-dark">机器学习</a></p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="card text-dark bg-white border-white">
+                    <div class="card-header bg-white" style="font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0">热门标签</div>
+                    <div class="card-body">
+                        <button type="button" class="btn btn-primary btn-sm" style="margin-bottom: 5px">机器学习
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" style="margin-bottom: 5px">Tensorflow</button>
+                        <button type="button" class="btn btn-success btn-sm" style="margin-bottom: 5px">Python</button>
+                        <button type="button" class="btn btn-danger btn-sm" style="margin-bottom: 5px">学习笔记</button>
+                        <button type="button" class="btn btn-warning btn-sm" style="margin-bottom: 5px">神经网络</button>
+                        <button type="button" class="btn btn-info btn-sm" style="margin-bottom: 5px">深度学习</button>
+                    </div>
+                </div>
+            </div>
+	</div>
+    </div>
+
+</div>
+<div class="foot">
+    <li style="list-style: none; color: #FFFFFF; ">Power by longweibing</li>
+    <li style="list-style: none; color: #FFFFFF; "><a href="https://github.com/Longweibing">Github: https://github.com/Longweibing</a></li>
+    <li style="list-style: none; color: #FFFFFF; "><a href="https://blog.csdn.net/github_37412255">CSDN BLOG: https://blog.csdn.net/github_37412255</a></li>
+    <li style="list-style: none; color: #FFFFFF; ">EMAIL: 591178251@qq.com</li>
+</div>
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../asset/js/jquery-slim.min.js" ></script>
+<script src="../asset/js/bootstrap.min.js"></script>
+<script>
+    function query(object) {
+        let showView = document.getElementById("showView");
+        showView.innerHTML = "";
+
+        let text = readfile("../asset/index/search_index.txt");
+        let keywords = object.value.trim();
+        let allLines = text.split("\n");
+        for (let index in allLines) {
+            let titleAndContent = allLines[index].split("    ");
+            if (titleAndContent[0].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {  // 博客标题中包含关键字的处理
+                let titleStr = "<a href=\""+ titleAndContent[0] + "\" class=\"text-dark\">" +
+                    titleAndContent[0].replace('.html', '').replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</a>";
+                showView.innerHTML = showView.innerHTML + "<div class=\"card text-dark bg-white border-white\">\n" +
+                    "                <div style='font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0' class=\"card-header bg-white\">" + titleStr + "</div>\n" +
+                    "                <div class=\"card-body\">\n" +
+                    "                    <p class=\"card-text\">" + titleAndContent[1].split("  ")[0] + "</p>\n" +
+                    "                    <a href=\"" + titleAndContent[0] + "\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
+                    "                </div>\n" +
+                    "            </div>";
+
+            } else {
+                let content = titleAndContent[1].split("  ");
+                for (let i in content) {
+                    if (content[i].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {
+                        let titleStr = "<a href=\""+ titleAndContent[0] + "\" class=\"text-dark\">" + titleAndContent[0].replace('.html', '') + "</a>";
+                        showView.innerHTML = showView.innerHTML + "<div class=\"card text-dark bg-white border-white\">\n" +
+                            "                <div style='font-size:larger; border-left: 5px solid #0068d7; border-bottom: 1px solid #fff; padding-bottom: 0' class=\"card-header bg-white\">" + titleStr + "</div>\n" +
+                            "                <div class=\"card-body\">\n" +
+                            "                    <p class=\"card-text\">" + content[i].replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</p>\n" +
+                            "                    <a href=\"" + titleAndContent[0] + "\" class=\"btn btn-primary float-md-right\">阅读全文</a>\n" +
+                            "                </div>\n" +
+                            "            </div>";
+                        break;
+                    }
+                }
+            }
+        }
+        showView.style.visibility = "visible";
+
+        // 如果搜索输入框中的关键字为空或者不匹配博客内容，则将搜索界面隐藏。
+        if (object.value.trim() === "" || showView.innerHTML === "") {
+            showView.style.visibility = "hidden";
+        }
+
+    }
+
+    // 夜间模式
+    function changeDark() {
+        let body = document.body;
+        body.style.backgroundColor = "#353a40";
+        // 导航栏变暗
+        let nav = document.getElementById("nav");
+        nav.className = "navbar navbar-expand-md navbar-dark fixed-top bg-dark";
+        nav.innerHTML = "<img src=\"../asset/images/L.jpg\">\n" +
+            "        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
+            "            <span class=\"navbar-toggler-icon\"></span>\n" +
+            "        </button>\n" +
+            "        <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n" +
+            "            <ul class=\"navbar-nav mr-auto\">\n" +
+            "                <li class=\"nav-item active\">\n" +
+            "                    <a class=\"nav-link\" href=\"../index.html\">主页</a>\n" +
+            "                </li>\n" +
+            "                <li class=\"nav-item dropdown\">\n" +
+            "                    <a class=\"nav-link dropdown-toggle\" href=\"http://example.com\" id=\"dropdown01\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">分类</a>\n" +
+            "                    <div class=\"dropdown-menu text-white-50 bg-dark border-dark\" aria-labelledby=\"dropdown03\">\n" +
+            "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">机器学习</a>\n" +
+            "\n" +
+            "                    </div>\n" +
+            "                </li>\n" +
+            "                <li class=\"nav-item dropdown\">\n" +
+            "                    <a class=\"nav-link dropdown-toggle\" href=\"http://example.com\" id=\"dropdown02\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">标签</a>\n" +
+            "                    <div class=\"dropdown-menu bg-dark border-dark\" aria-labelledby=\"dropdown03\">\n" +
+            "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">机器学习</a>\n" +
+            "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">Tensorflow</a>\n" +
+            "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">Python</a>\n" +
+            "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">学习笔记</a>\n" +
+            "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">神经网络</a>\n" +
+            "                        <a onmouseenter=\"this.style.backgroundColor='#515151'\" onmouseleave=\"this.style.backgroundColor='#353a40'\" class=\"dropdown-item text-white-50\" href=\"#\">深度学习</a>\n" +
+            "\n" +
+            "                    </div>\n" +
+            "                </li>\n" +
+            "                <li class=\"nav-item\">\n" +
+            "                    <a class=\"nav-link\" href=\"实现数组元素互换位置（乘机理解java参数传递）.html\">白天模式</a>\n" +
+            "                </li>\n" +
+            "            </ul>\n" +
+            "\n" +
+            "            <form class=\"form-inline mt-2 mt-md-0\">\n" +
+            "                <input class=\"form-control mr-sm-2 bg-dark border-dark\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\" id=\"inputSearch\" oninput=\"query2(this)\">\n" +
+            "            </form>\n" +
+            "        </div>";
+        document.getElementById("split1").style.borderColor = "#353a40";
+
+        // 博客列表和其他
+        let blogContent = document.getElementById("blogContent");
+        blogContent.className = "col-sm-8 bg-dark text-white-50";
+        let meta = document.getElementById("meta");
+        meta.className = "col-sm-4";
+        meta.innerHTML = " <div class=\"card text-white-50 bg-dark border-dark\">\n" +
+            "                    <div class=\"card-header bg-dark border-dark\">博主简介</div>\n" +
+            "                    <div class=\"card-body\">\n" +
+            "                        <p class=\"card-text\">性别男，技术爱好者，目前职位是算法工程师。<br><br>2019.06.04</p>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "                <hr>\n" +
+            "                <div class=\"card text-white-50 bg-dark border-dark\">\n" +
+            "                    <div class=\"card-header bg-dark border-dark\">热门分类</div>\n" +
+            "                    <div class=\"card-body\">\n" +
+            "                        <p class=\"card-text\"><a href=\"#\" class=\"text-white-50\">机器学习</a></p>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "\n" +
+            "                <hr>\n" +
+            "\n" +
+            "                <div class=\"card text-white-50 bg-dark border-dark\">\n" +
+            "                    <div class=\"card-header bg-dark border-dark\">热门标签</div>\n" +
+            "                    <div class=\"card-body\">\n" +
+            "                        <button type=\"button\" class=\"btn btn-primary btn-sm\" style=\"margin-bottom: 5px\">机器学习</button>\n" +
+            "                        <button type=\"button\" class=\"btn btn-secondary btn-sm\" style=\"margin-bottom: 5px\">Tensorflow</button>\n" +
+            "                        <button type=\"button\" class=\"btn btn-success btn-sm\" style=\"margin-bottom: 5px\">Python</button>\n" +
+            "                        <button type=\"button\" class=\"btn btn-danger btn-sm\" style=\"margin-bottom: 5px\">学习笔记</button>\n" +
+            "                        <button type=\"button\" class=\"btn btn-warning btn-sm\" style=\"margin-bottom: 5px\">神经网络</button>\n" +
+            "                        <button type=\"button\" class=\"btn btn-info btn-sm\" style=\"margin-bottom: 5px\">深度学习</button>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "\n" +
+            "                <hr>";
+
+    }
+
+    function viewNoShow() {
+        document.getElementById("showView").style.visibility = "hidden";
+    }
+
+    function show() {
+        document.getElementById("showView").style.visibility = "visible";
+    }
+
+    // 读文件内容
+    function readfile(filepath) {
+        let xhr = new XMLHttpRequest(),
+            okStatus = document.location.protocol === "file:" ? 0 : 200;
+        xhr.open('GET', filepath, false);
+        xhr.overrideMimeType("text/html;charset=utf-8");//默认为utf-8
+        xhr.send(null);
+        return xhr.status === okStatus ? xhr.responseText : null;
+    }
+
+    // 夜间搜索界面
+    function query2(object) {
+        let showView = document.getElementById("showView");
+        showView.innerHTML = "";
+        showView.style.backgroundColor = "#353a40";
+
+        let text = readfile("../asset/index/search_index.txt");
+        let keywords = object.value.trim();
+        let allLines = text.split("\n");
+        for (let index in allLines) {
+            let titleAndContent = allLines[index].split("    ");
+            if (titleAndContent[0].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {  // 博客标题中包含关键字的处理
+                let titleStr = "<a href=\""+ titleAndContent[0] + "\" class=\"text-white-50\">" +
+                    titleAndContent[0].replace('.html', '').replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</a>";
+                showView.innerHTML = showView.innerHTML + "<div class=\"card text-white-50 bg-dark border-dark\">\n" +
+                    "                <div class=\"card-header bg-dark border-dark\">" + titleStr + "</div>\n" +
+                    "                <div class=\"card-body\">\n" +
+                    "                    <p class=\"card-text\">" + titleAndContent[1].split("  ")[0] + "</p>\n" +
+                    "                    <a href=\"" + titleAndContent[0] + "\" class=\"btn btn-dark text-white-50  float-md-right\">阅读全文</a>\n" +
+                    "                </div>\n" +
+                    "            </div>";
+
+            } else {
+                let content = titleAndContent[1].split("  ");
+                for (let i in content) {
+                    if (content[i].toLowerCase().indexOf(keywords.toLowerCase()) > -1) {
+                        let titleStr = "<a href=\""+ titleAndContent[0] + "\" class=\"text-white-50\">" + titleAndContent[0].replace('.html', '') + "</a>";
+                        showView.innerHTML = showView.innerHTML + "<div class=\"card text-white-50 bg-dark border-dark\">\n" +
+                            "                <div class=\"card-header bg-dark border-dark\">" + titleStr + "</div>\n" +
+                            "                <div class=\"card-body\">\n" +
+                            "                    <p class=\"card-text\">" + content[i].replace(new RegExp(keywords , 'gi'), "<span style=\"color:red;\">" + keywords + "</span>") + "</p>\n" +
+                            "                    <a href=\"" + titleAndContent[0] + "\" class=\"btn btn-dark text-white-50 float-md-right\">阅读全文</a>\n" +
+                            "                </div>\n" +
+                            "            </div>";
+                        break;
+                    }
+                }
+            }
+        }
+        showView.style.visibility = "visible";
+
+        // 如果搜索输入框中的关键字为空或者不匹配博客内容，则将搜索界面隐藏。
+        if (object.value.trim() === "" || showView.innerHTML === "") {
+            showView.style.visibility = "hidden";
+        }
+
+    }
+</script>
+</body>
